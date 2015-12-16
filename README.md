@@ -4,9 +4,18 @@
 
 ## General Project Summary:
 
-[Name] is a application for searching for breweries, big and small, around a certain location based on different attributes: -Brewery -Type of Beer -Location -Ingredients -Optional: Hops, Yeast
+Name] is a application for searching for breweries, big and small, around a certain location based on different attributes:
+* Brewery
+* Type of Beer
+* Location
+* Ingredients
+* Optional: Hops, Yeast
 
-Also, searches based on wines can be done based on: -Vineyards -Type of Wine -Age -Location
+Also, searches based on wines can be done based on:
+* Vineyards
+* Type of Wine
+* Age
+* Location
 
 ## Technologies Used:
 - HTML 
@@ -55,3 +64,4 @@ Also, searches based on wines can be done based on: -Vineyards -Type of Wine -Ag
 - Deployed [ ]
  
 - User Input validation [ ]
+>>>>>>> 49044ccac86784630df34915d908a8b26e75d344
