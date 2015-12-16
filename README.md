@@ -10,7 +10,7 @@ Technologies Used:
 
 Deployed Link:
 
-http://my.herokuapp.com/ [ ]
+https://brew-find-2016.herokuapp.com/ [ ]
 
 API's Used:
 
