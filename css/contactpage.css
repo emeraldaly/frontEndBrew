@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+#centereddiv {
+  text-align: center;
+  display: center;
+}
+#well1 {
+  display: center;
+}
+
+#well2 {
+  display: center;
+}
+
+div.text-center {
+  text-align: center;
+}
+
 ::selection {
         background-color: #b5e2e7;
     }

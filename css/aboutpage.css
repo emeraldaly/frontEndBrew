@@ -16,3 +16,11 @@ h1 {
 .p2 {
   text-align: center;
 }
+
+#well3 {
+  padding-bottom: 10px;
+}
+
+.well.well-sm.other-color {
+  text-align: center;
+}

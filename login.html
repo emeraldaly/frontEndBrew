@@ -48,25 +48,48 @@
 
 
 <div>
-<div class="container" >
-    <div class="col-md-6" >
-        <div id="logbox"  >
-            <form id="signup" method="post" action="/signup" >
-                <h1>Create an Account</h1>
-         <input name="user[email]" type="email" placeholder="Email address" class="input pass"/>
+  <div class="container">
+    <div class="well well-lg">
+       <h1>Create an Account</h1>
+          <div id="logbox">
+            <form id="signup" method="post" action="/signup">
+                <input name="user[email]" type="email" placeholder="Email address" class="input pass"/>
                 <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
                 <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/>
                 <input type="submit" value="Sign me up!" class="inputButton"/>
 
             </form>
         </div>
+     </div>   
+   </div>
+</div>
+<footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="collapse navbar-collapse navHeaderCollapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
+            <i class="fa fa-linkedin">
+            </i>
+          </a>
+        </li>
+        <li>
+         <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
+           <i class="fa fa-twitter">
+           </i>
+          </a>
+        </li>
+         <li>
+            <a href="http://www.github.com/ctevnan" target="_blank">
+             <i class="fa fa-github">
+             </i>
+            </a>
+         </li>
+      </ul>
     </div>
-    <!--col-md-6-->
-
-
-</div>
-</div>
-
+  </div>
+</aside>
+</footer>
 </body>
 </html>
 <!-- jQuery CDN -->
