@@ -1,0 +1,35 @@
+.jumbotron {
+  text-align: center;
+}
+.p {
+  text-align: center;
+}
+
+::selection {
+        background-color: #b5e2e7;
+    }
+
+    ::-moz-selection {
+        background-color: #8ac7d8;
+    }
+
+    body {
+        background: #3CC;
+    }
+
+    .container {
+        display: -webkit-flex;
+        display: flex;
+        height: 100%;
+    }
+
+    #logbox {
+
+        padding: 10px;
+        margin: 50px auto;
+        width: 340px;
+        background-color: #fff;
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
