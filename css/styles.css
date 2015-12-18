@@ -1,7 +1,8 @@
- body {
+ #navbar {
         font-family: 'Tangerine', serif;
         font-size: 48px;
       }
+<<<<<<< HEAD
     /* css for contact page */
 ::selection {
         background-color: #b5e2e7;
@@ -31,3 +32,19 @@
         -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     }
+=======
+
+.footer {
+margin-top: 100px ;
+text-align: center ;
+font-size: 16px ;
+font-family: verdana ;
+width: 600px ;
+height: 50px ;
+}
+
+body {
+
+  font-family: 'Playfair Display', serif;
+}
+>>>>>>> 91797529a22fbe9e07952aa9b6c0a4ae371c9200
