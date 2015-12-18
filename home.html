@@ -4,6 +4,7 @@
   <title>BreWine Find</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
@@ -21,88 +22,69 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar header">
-             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">breWineFinder.com</a>
+          </div> <!-- div nav header -->
           <div id="navbar" class="navbar-collapse collapse">
+
             <ul class="nav navbar-nav">
             <li class="active">
-               <a href="#">Home</a>
+               <a href="home.html">Home</a>
             </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-             <a href="#">Contact</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dowpdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                 "Dropdown"
-                 <span class="caret"></span>
-                 </a>
-                 <ul class="dropdown-menu">
-                   <li>
-                     <a href="#">Action</a>
-                   </li>
-                   <li>
-                     <a href="#">Another action</a>
-                   </li>
-                   <li>
-                      <a href="#">Some other action</a>
-                   </li>
-                   <li role="separator" class="divider"></li>
-                   <li class="dropdown-header">Nav header</li>
-                   <li>
-                      <a href="#">Separated link</a>
-                   </li>
-                   <li>
-                       <a href="#">Another separate link</a>
-                   </li>
-                 </ul>
+
+               <li>
+                 <a href="about.html">About</a>
+               </li>
+               <li>
+               <a href="contact.html">Contact</a>
+           
                </li>
              </ul>
              <ul class="nav navbar-nav navbar-right">
               <li class="active">
-                <a href="./">
-                "Default"
-                <span class="sr-only">(current)</span>
-               </a>
+
+                <a href="login.html">Log in</a>
+
              </li>
-             <li>
-                <a href="../navbar-static-top/">Static top</a>
-             </li>
-             <li>
-               <a href="../navbar-fixed-top/">Fixed top</a>
-             </li>
+               <li>
+                  <form class="navbar-form navbar-left" role="search">
+                   <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                   </div>
+                   <button type="submit" class="btn btn-default">Submit</button>
+                   </form>
+               </li>
             </ul>
-           </div>
-          <!--/.nav-collapse -->
-          </div>
-         <!--/.container-fluid -->
-         </nav>                   
+           </div> <!--/.nav-collapse -->
+         
+        </div> <!--/.container-fluid -->
+         
+      </nav>                   
       
-    </div> <!-- this is section for the pictures section of our homepage-->
+    </div> <!-- end of row -->
+
+    <!-- this is section for the pictures section of our homepage-->
   
-    <div class="row" id="">
+    <div class="row" id="info">
       <div class="col-md-3">col 3</div>
       <div class="col-md-6"> col 6</div>
       <div class="col-md-3"> col 3</div>
     </div>
   
-    <div class="row">
+    <div class="row" id="body-content">
       <div>
         <p>
-            Introduction
+          Introduction
 
-A moldy Miller tries to seduce a broken bottle. The PBR laughs out loud, because a geosynchronous Avery IPA makes love to a bud dry. Now and then, a bottle of beer for a Hazed and Infused avoids contact with the somewhat miserly Guiness. Now and then, a stein inside a bullfrog brew almost cooks cheese gri
+          A moldy Miller tries to seduce a broken bottle. The PBR laughs out loud, because a geosynchronous Avery IPA makes love to a bud dry. Now and then, a bottle of beer for a Hazed and Infused avoids contact with the somewhat miserly Guiness. Now and then, a stein inside a bullfrog brew almost cooks cheese gri
         </p>
-      ts for a most difficult blue moon. A Full Sail IPA slyly dances with a bud dry.
-    </div>
+        ts for a most difficult blue moon. A Full Sail IPA slyly dances with a bud dry.
+      </div>
     </div>
   
     <div class="row">
@@ -110,18 +92,22 @@ A moldy Miller tries to seduce a broken bottle. The PBR laughs out loud, because
       <div class="col-md-6">col 6</div>
       <div class="col-md-3">col 3</div>
     </div>
-    
+     </div>
+    <div class="footer">
+      <p> This is the footer section. </p>
+    </div>
+  
   </div>
   <!-- this next section will be for any paragraphs and information we want to display on our homepage, it's filled with loren ipsum stuff as an example-->
   
     
-  </div>
-  
+ 
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/brewerydb.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </body>
 </html>
