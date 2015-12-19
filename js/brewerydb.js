@@ -8,6 +8,7 @@ $(document).ready(function(){
 
   $.ajax({
     type: "Get",
+    GET: "/location/10003",
     //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
     //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
     //url: "http://requestb.in/1cacuu41",
