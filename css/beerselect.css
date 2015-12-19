@@ -1,7 +1,5 @@
-.jumbotron {
-  text-align: center;
-}
-.p {
+#jumbo {
+  display: center;
   text-align: center;
 }
 
@@ -9,9 +7,11 @@
   text-align: center;
 }
 
+
 .p {
   text-align: center;
 }
+
 
 .a {
   text-align: center;
