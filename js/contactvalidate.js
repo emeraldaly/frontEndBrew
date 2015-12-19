@@ -3,19 +3,19 @@ $(function() {
     $('#contact').validate({
         rules: {
             name: {
-                required: true,
-                minlength: 2
+                required: true;
+                minlength: 2;
             },
             email: {
-                required: true,
-                email: true
+                required: true;
+                email: true;
             },
             message: {
-                required: true
+                required: true;
             },
             answer: {
-                required: true,
-                answercheck: true
+                required: true;
+                answercheck: true;
             }
         },
         messages: {
