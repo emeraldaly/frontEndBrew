@@ -1,6 +1,3 @@
-
-
-    /* css for contact page */
 .nav.navbar.navbar-default {
    margin-top: 100px ;
    text-align: center ;
@@ -17,6 +14,9 @@ body {
 #bandwbody{
   background-color: #ffff99;
 }
- 
+
+.img-circle {
+  border-radius: 50%;
+}
 
 
