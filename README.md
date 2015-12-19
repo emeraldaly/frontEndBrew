@@ -28,7 +28,8 @@ Also, searches based on wines can be done based on:
 
 ## Deployed Link:
 
-- https://brew-find-2016.herokuapp.com/ [ ]
+- https://brew-find-2016.herokuapp.com/ 
+  https://brew-find-2016.herokuapp.com/home.html[ ]
 
 ## API's Used:
 
