@@ -27,11 +27,11 @@ $(function() {
                 required: "no email, no message"
             },
             message: {
-                required: "um...yea, you have to write something to send this form.",
-                minlength: "thats all? really?"
+                required: "You have to write something to send this form.",
+                minlength: "That's all?"
             },
             answer: {
-                required: "sorry, wrong answer!"
+                required: "Sorry, wrong answer!"
             }
         },
         submitHandler: function(form) {
