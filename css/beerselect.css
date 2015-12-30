@@ -1,18 +1,23 @@
+.jumbotron {
+  text-align: center;
+}
+
 #jumbo {
-  display: center;
   text-align: center;
 }
 
-.h1 {
+h1 {
+  text-align: center;
+}
+.p1 {
   text-align: center;
 }
 
-
-.p {
+.p2 {
   text-align: center;
 }
 
-
-.a {
-  text-align: center;
+#center-block {
+  margin-left: 15px;
+  margin-right: 15px;
 }
