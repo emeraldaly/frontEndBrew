@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+
         <!--beer selection in container-->
         <main class="container">
             <div class="panel panel-default" div id="wineselect">
@@ -32,10 +33,24 @@
                 <div class="panel-body text-center" div id="winebody">
                     <div class="inline">
                         <div class="thumbnail">
+
+                           
+
                             <h3>Wine Types</h3>
                                 <p>There are two main wine categories. There is red wine and there is white wine.</p>
-                                <p>As a general rule, red wine is mainly used for pairing in dining with meat. These meats can range from steaks to chicken, etc.</p>
-                                <p>Also as a general rule, white wine is mainly used for pairing in dining with seafood.</p>
+                             <button class="btn btn-primary clickButton" data-toggle="modal" data-target="#gameModal">Click here for a brief educational summary on red and white wine</button>
+                                <div class="modal fade" id="gameModal">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                         <p>As a general rule, red wine is mainly used for pairing in dining with meat. These meats can range from steaks to chicken, etc.</p>
+                                         <p>Also as a general rule, white wine is mainly used for pairing in dining with seafood.</p>
+                                    </div>
+                                    </div>     
+                                    </div>
+                                </div>
+
+
                             <img src="https://image.freepik.com/free-vector/red-and-white-wine-glasses_23-2147496692.jpg" height="300px" width="300px" alt="wine categories">
                             <div class="caption">
         
@@ -213,6 +228,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/winesearch.js"></script>
     </body>
 
 </html>
