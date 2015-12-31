@@ -8,17 +8,22 @@ $(document).ready(function(){
 
   $.ajax({
     type: "Get",
-    GET: "/location/10003",
+    dataType: 'json',
+    GET: "/location/d25euF",
+
     //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
     //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
     //url: "http://requestb.in/1cacuu41",
     url: brewDBAPI,
-    success: function(drinks){
-      
+    success: function(brews){
+        //var brewResponse =JSON.parse(brews);
+        console.log(brews.data[4]);
+        console.log(brews[0]);
+        console.log(brews.data.status);
       //for(var i =0; i< drinks.length; i++){
         debugger
         //console.log(drinks[i]);
-        console.log(drinks)
+        //console.log(brews[1][0])
       },
     
     error: function ( jqXHR, textStatus, errorThrown ) {
