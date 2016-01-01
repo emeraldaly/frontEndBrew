@@ -5,6 +5,9 @@ nav {
    height: 100px ;
    background-color: #ff8f00;
 }
+ .parallax-container {
+      height: 250px;
+    }
 
 .brand-logo {
     text-align: left;
