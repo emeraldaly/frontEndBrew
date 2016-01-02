@@ -15,6 +15,7 @@ nav {
 
 body {
   background-color: #b71c1c;
+  background-image: url("../pictures/flowers.png");
 } /* #993300 */
 
 
@@ -24,6 +25,7 @@ body {
 
 .img-circle {
   border-radius: 50%;
+  
 }
 
 .carousel-inner > .item > img{
