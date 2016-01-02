@@ -7,6 +7,7 @@
     <meta charset="utf-8">
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 
     <!--Import Google Icon Font-->
@@ -53,20 +54,39 @@
         <p><a class="btn btn-primary btn-lg" href="home2.html" role="button">Back to home</a></p>
     </div>
     <div class="well well-sm other-color" div id="well 4">
-        <h1>Brewinefinder will get you home safe.</h1>
+        <h1>BreWineFinder will get you home safe.</h1>
         <p>We encourage responsible consumption of all of our fine beverages.</p>
         <p>breWineFinder.com cares about the people who use our app to visit the best breweries and vineyards in their area. That's why we made it easy for our users to access Rides by Uber to set up transportation to and from their brewery or vineyard of choice. Search for Uber Products, time estimate and price estimate.</p>
         <br/>
         <br/>
      </div>
-            <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="container">
-                    <div class="collapse navbar-collapse navHeaderCollapse">
-                        <ul class="nav navbar-nav navbar-left">
-                        </ul>
-                    </div>
-                </div>
-            </footer>
+<div class="container">
+  <div class="row">
+     <div class="col-md-4">
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" id="userAddress" placeholder="100 Rockafeller Road, Piscataway, NJ"/>
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+      </div>
+      <div class="col-md-8">
+        <div class="row" id="products"></div>
+    </div>
+  </div>
+</div>
+              
+
+
+<footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+      <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+          </ul>
+      </div>
+  </div>
+</footer>
 </body>
 
 </html>
@@ -74,6 +94,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/productsearch.js"></script>
 </body>
-
 </html>
