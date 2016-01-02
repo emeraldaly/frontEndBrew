@@ -105,14 +105,15 @@
               <div class="thumbnail search">
 
                 <div class="caption">
-                  <h5>Results should pop up in another page or on Page?</h5>
+                  <h5>Results should pop up in another page or on Page? Can select By DropDown or simple Search?</h5>
                   <div class="row">
                     <div class="input-field col s12">
                       <select>
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Beer Name</option>
-                        <option value="2">Location</option>
-                        <option value="3">Brewery</option>
+                        <option id="userBeerOptions" value="" disabled selected>Choose your option</option>
+                        <option id="beerName" value="1">Beer Name</option>
+                        <option id="breweryNames" value="2">Brewery Name</option>
+                        <option id="breweryLocations" value="3">Brewery Locations by ZipCode</option>
+                        
                       </select>
                       <label>Select how you search for beers</label>
                     </div>
@@ -121,18 +122,55 @@
                   <div class="divider"></div>
                   
                   <div class="row">
+                  Search Beers By Name
+                    <div class="col-md-3">
+                      <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                          </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Search
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+
+                    </div>
+                    
+                  </div>
+
+                  <div class="row">
+                  Search for Brewery By name
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+
+                          </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Search
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                  </div>
+
+                  <div class="row">
+                  Search for Breweries by ZipCode
                     <form>
                           <div class="input-field">
                             <input id="search" type="search" required>
                             <label for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
                           </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Search
+                            <i class="material-icons right">send</i>
+                        </button>
                     </form>
                   </div>
                   
                   <div class="row">
                     <span class="glyphicon glyphicon-grain"></span>
-                  <a class="btn btn-primary btn large" href="beerselect.html" role="button">Search Now</a>
+                    
                   </div>
                   
                 </div>
@@ -243,6 +281,7 @@
           
     <script type="text/javascript" src="js/materializeJS.js"></script>
     <script type="text/javascript" src="js/homepage.js"></script>
+    <script type="text/javascript" src="js/searches.js"></script>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </body>
 

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-//var userBeerNameSearch = $()
+
 
 
 //Will use specific API endpoints to run searches
@@ -24,18 +24,37 @@ $(document).ready(function(){
 
 //*Not working* = URL for Location Search: api.brewerydb.com/v2/breweries?key=XXXXXX&withLocations=Y
 
-
+//Brweries by General Search
+//http://api.brewerydb.com/v2/search?q=60%2Bminute&type=beer&key=4d31671ed97df8dccb12177e18f94199
 
 //Breweries by Beer Search Example: Coors Light
  //http://api.brewerydb.com/v2/beers?name=coors%20light&withBreweries=Y&key=4d31671ed97df8dccb12177e18f94199
 
 
 //A Function To Run the Search based on the URL we specify
+
+
   function breweryDBurlAPI () {
 
     var brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
-    //brewDBAPI += what user sets to search by
-    //brewDBAPI += what user sets to search by
+    
+
+    if (  ) { //if option selected is Beer Names, add /beers?names to end of API URL
+      alert("Beers by Name was selected")
+      //brewDBAPI += /beers?names
+    
+    }else if (){
+      alert("Beers by Name was selected")
+
+      //brewDBAPI += /locations?postalCode=
+
+    } else if () {
+      alert("Beers by Name was selected")
+    };
+    
+    
+
+
     brewDBAPI += "?key=4d31671ed97df8dccb12177e18f94199";
     //brewDBAPI += "/beer/random";
     //http://api.brewerydb.com/v2/search?q=%2218%22+Imperial+IPA&key=4d31671ed97df8dccb12177e18f94199
