@@ -34,11 +34,28 @@ $(function() {
                 required: "Sorry, wrong answer!"
             }
         },
+
+        success: function(responseText, statusText) {
+$('#contact :input').attr('disabled', 'disabled');
+$('#contact').fadeTo( "slow", 0.15, function() {
+$(this).find(':input').attr('disabled', 'disabled');
+$(this).find('label').css('cursor','default');
+$('#contact #success').text(responseText);
+$('#contact #success').fadeIn();
+});
+},
+error: function(responseText, statusText) {
+$('#contact').fadeTo( "slow", 0.15, function() {
+$('#contact #error').text(responseText);
+$('#contact #error').fadeIn();
+});
+}
+
         submitHandler: function(form) {
             $(form).ajaxSubmit({
                 type:"POST",
                 data: $(form).serialize(),
-                url:"process.php",
+                url:"mailer.php",
                 success: function() {
                     $('#contact :input').attr('disabled', 'disabled');
                     $('#contact').fadeTo( "slow", 0.15, function() {

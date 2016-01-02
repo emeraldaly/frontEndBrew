@@ -10,8 +10,7 @@ form label {
     line-height:1.3rem;
     font-size:13px;
     line-height:13px;
-    color:#e6e6e1;
-    text-shadow:0px -1px #202020
+    
 }
 form label.error {
     margin-bottom:1em;
@@ -76,3 +75,6 @@ fieldset {
 #error span p {
   color:#c0392b;
 }
+
+
+
