@@ -14,7 +14,8 @@
 
 
       <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous"> -->
 
     <!-- Compiled and minified CSS -->
@@ -25,31 +26,39 @@
 </head>
 
 <body>
-
-  <div class="container">
-        <!-- this section "header" is for the nav bar-->
+  
+  <div class="container-fluid">
+    <!-- this section "header" is for the nav bar-->
     <div class="row">
             <!-- nav bar by Carolyn -->
             <!--static navbar-->
       
-      <nav>
-        <div class="nav-wrapper">
-          <div class="col s3">
-            <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">breWineFinder.com</a>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="col s3">
+              <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">BreWine Find/a>
+            </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="home2.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="swoop.html">Swoop</a></li>
+              <li><a href="login.html">Log in</a></li>
+            </ul>
           </div>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="home2.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="swoop.html">Swoop</a></li>
-            <li><a href="login.html">Log in</a></li>
-          </ul>
-        </div>
-      </nav>
+        </nav>
+      </div> 
+    </div> <!-- end of container-fluid -->
+
+  <div class="container"> <!-- <div class="container"> -->
+
+
+      
+      
         
 
       
-    </div>
+    
         <!--/.container-fluid -->
         <!-- need to find end div contatiner -->
 
@@ -243,36 +252,41 @@
         </div> <!-- End of Third Panel: Wine Panel -->
       </div>
           
-  
+</div> <!-- end of container -->
 
     <!-- Footer -->
-    <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container">
-            <div class="collapse navbar-collapse navHeaderCollapse">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.github.com/ctevnan" target="_blank">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </li>
-                </ul>
+    <div id="footer">
+      <footer class="page-footer">
+       
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">About Us </a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Connect</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"></a>More Stuff</li>
+              </ul>
+            </div>
+          </div>
+        
+        <div class="footer-copyright">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+          </div>
         </div>
-        </aside>
-    </footer>
-  <!-- End of Footer -->
+      </footer>
+            
+  
+    </div> <!-- End of Footer -->
+    
 
-</div> <!-- end of container -->
+
    
     
     <!-- jQuery CDN -->
@@ -284,9 +298,8 @@
      <!-- Compiled and minified JavaScript - Materialize-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
-          
     <script type="text/javascript" src="js/materializeJS.js"></script>
-    
+
     <script type="text/javascript" src="js/homepage.js"></script>
 
     <script type="text/javascript" src="js/searches.js"></script>

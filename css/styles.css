@@ -5,6 +5,15 @@ nav {
    height: 100px ;
    background-color: #ff8f00;
 }
+
+footer{
+  font-size: 16px ;
+   font-family: verdana ;
+   width: 100% ;
+   
+   background-color: #ff8f00;  
+}
+
  .parallax-container {
       height: 250px;
     }
