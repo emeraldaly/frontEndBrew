@@ -3,12 +3,14 @@
 $(document).ready(function(){
 
 });
-
+var userWineSearch;
+var wineAPIkey = "apikey=29be091f5bd59025f02d4ac450384cf7";
+var wineAPIurl = "http://services.wine.com/api/beta2/service.svc/json/catalog?"
+wineAPIurl += wineAPIkey;
+wineAPIurl += "search=";
+wineAPIurl += userWineSearch;
 
 //Example: http://services.wine.com/api/beta2/service.svc/format/resource?apikey=key&parameters
-var wineAPIley = 29be091f5bd59025f02d4ac450384cf7;
-//Sample
-//http://services.wine.com/api/beta2/service.svc/format/resource?apikey=key&parameters
 
 //Merlot Example by Mark
 //http://services.wine.com/api/beta2/service.svc/json/catalog?apikey=29be091f5bd59025f02d4ac450384cf7&search=merlot
@@ -18,12 +20,10 @@ var wineAPIley = 29be091f5bd59025f02d4ac450384cf7;
   $.ajax({
     type: "Get",
 
-    //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "http://requestb.in/1cacuu41",
+    
     url: brewDBAPI,
     success: function(wines){
-        //var brewResponse =JSON.parse(brews);
+        
         console.log(wines);
         
       //for(var i =0; i< drinks.length; i++){
