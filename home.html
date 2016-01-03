@@ -39,7 +39,7 @@
               <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">BreWine Finder</a>
             </div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="home2.html">Home</a></li>
+              <li><a href="home.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="swoop.html">Swoop</a></li>
@@ -54,15 +54,6 @@
 
 
       
-      
-        
-
-      
-    
-        <!--/.container-fluid -->
-        <!-- need to find end div contatiner -->
-
-
   
 
 <!-- Marc's Carousel  this is section for the pictures section of our homepage-->
@@ -108,6 +99,7 @@
         <div class="panel panel-default" div id="beerAndWineSearch">
           <div class="panel-heading text-center"> heading moved to h5
           </div>
+
           <div class="panel-body text-center" div id="searchBody">
             <div class="inline">
               <div class="thumbnail search">
@@ -115,6 +107,17 @@
                 <div class="caption">
                   <h5>Results should pop up in another page or on Page? Can select By DropDown or simple Search?</h5>
                   <div class="row">
+                    <div class="input-field col s12">
+                      <select>
+                        <option id="userBeerOptions" value="" disabled selected>Choose Beer or Wines</option>
+                        <option id="beerName" value="1">Beers</option>
+                        <option id="breweryNames" value="2">Wines</option>
+                       
+                        
+                      </select>
+
+                      <label>Select how you search for beers</label>
+                    </div>
                     <div class="input-field col s12">
                       <select>
                         <option id="userBeerOptions" value="" disabled selected>Choose your option</option>
@@ -298,6 +301,8 @@
      <!-- Compiled and minified JavaScript - Materialize-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
     <script type="text/javascript" src="js/materializeJS.js"></script>
 
     <script type="text/javascript" src="js/homepage.js"></script>
@@ -305,11 +310,12 @@
     <script type="text/javascript" src="js/searches.js"></script>
 
     <script type="text/javascript" src="js/parallax.js"></script>
+
     <script type="text/javascript" src="js/brewerydb.js"></script>
     
 
 
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    
 </body>
 
 </html>
