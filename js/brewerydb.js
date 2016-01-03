@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 
 
+
 //Will use specific API endpoints to run searches
 
 //General Search URL:
@@ -33,7 +34,7 @@ $(document).ready(function(){
 
 //A Function To Run the Search based on the URL we specify
 
-
+/*
   function breweryDBurlAPI () {
 
     var brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
@@ -62,11 +63,14 @@ $(document).ready(function(){
 
   };
 
+*/
+
+brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
 //AJAX Call to access the endpoint
   $.ajax({
     type: "Get",
     dataType: 'json',
-    GET: "/location/d25euF",
+    //GET: "/location/d25euF",
 
     //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
     //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
@@ -74,9 +78,9 @@ $(document).ready(function(){
     url: brewDBAPI,
     success: function(brews){
         //var brewResponse =JSON.parse(brews);
-        console.log(brews.data[4]);
-        console.log(brews[0]);
-        console.log(brews.data.status);
+        //console.log(brews.data[4]);
+        console.log(brews);
+        //console.log(brews.data.status);
       //for(var i =0; i< drinks.length; i++){
         debugger
         //console.log(drinks[i]);
@@ -114,3 +118,7 @@ $(document).ready(function(){
   }; //end of function
 
 //API Key:  4d31671ed97df8dccb12177e18f94199
+
+
+
+});
