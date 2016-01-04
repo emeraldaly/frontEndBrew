@@ -104,7 +104,116 @@
       <div class="col s1">11</div>
       <div class="col s1">12</div>
     </div>
+    <div class="section">
+          <h3>We are here to connect you with a Drink.</h3>
+          <p>Our customers know what they want and love to learn about new options.</p>
+          <p>If you know what you want, we help you find it by letting you search by Name of Beer, by the Name of a Brewery or Winery, or by your Zip Code.</p>
+          <p>If you're looking to mix it up, check out our recommended selections at this time. Either way, you'll be taken care of here!</p>
+          <div class="row">
+            <div class="col s6">
+              <button class="btn teal waves-effect waves-light search" type="submit" name="action">Recommended Wines
+                        </button>
+            </div>
+            <div class="col s6">
+              <button class="btn teal waves-effect waves-light search" type="submit" name="action">Recommended Beers
+                        </button>
+            </div>  
+          </div>           
+          <div class="row">
+            <div class="col s6">
+                  
+                  <h6>Search for Beer By Name</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search1" type="search" required>
+                            <label id="#beerNameSearch1" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
 
+                          </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search1" type="submit" name="action">Beer by Name
+                            <i class="material-icons right">send</i>
+                        </button>
+                         </form>
+            </div> 
+            <div class="col s6">      
+                
+                <div class="row">
+                  <h6>Search for Wine By Name</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+
+                          </div>
+                          <button class="btn red darken-4" type="submit" name="action">Wine by Name
+                            <i class="material-icons right">send</i>
+                        </button>
+                         </form>
+            </div>                   
+            </div>
+            <div class="row">
+             <div class="col s6">  
+                   <h6>Search for Beer By Brewery</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+
+                          </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Beer by Brewery
+                            <i class="material-icons right">send</i>
+                        </button>
+                          </form>
+              </div>
+              <div class="col s6"> 
+              <h6>Search for Wine By Winery</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+
+                          </div>
+                          <button class="btn red darken-4" type="submit" name="action">Wine by Winery
+                            <i class="material-icons right">send</i>
+                        </button>
+                          </form>
+                </div>
+                </div>          
+                  <div class="row">
+                  <div class="col s6"> 
+                  <h6>Search for Beer by Zip Code</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                          </div>
+                          <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Beer by Zip
+                            <i class="material-icons right">send</i>
+                        </button>
+                        </form>
+               </div>
+               <div class="col s6">      
+                  <h6>Search for Wine by Zip Code</h6>
+                    <form>
+                          <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                          </div>
+                          <button class="btn red darken-4" type="submit" name="action">Wine by Zip
+                            <i class="material-icons right">send</i>
+                        </button>
+                        </form>
+                </div>
+              </div> 
+              </div>
+              </div>         
+
+    <!-- section -->
     <div class="row">
       <div class="col s12 m6 l6">
         <div class="row-search">
@@ -162,79 +271,7 @@
     </div>
 
   </div>
-
-
-  <div class="container">
-    <div class="divider"></div>
-    <div class="section">
-          <h3>Find the beer or wine you want.</h3>
-          <p>This will be our search Panel. Search for beers, breweries, wines, and vineyards.</p>
-          
-          <div class="row">
-            <div class="col s1">1</div>
-            <div class="col s1">2</div>
-            <div class="col s1">3</div>
-            <div class="col s1">4</div>
-            <div class="col s1">5</div>
-            <div class="col s1">6</div>
-            <div class="col s1">7</div>
-            <div class="col s1">8</div>
-            <div class="col s1">9</div>
-            <div class="col s1">10</div>
-            <div class="col s1">11</div>
-            <div class="col s1">12</div>
-          </div>
-          <div class="col md6">
-
-            <div class="row">
-              
-
-              <div class="input-field">
-                <select>
-                  <option id="userBeerOptions" value="" disabled selected>Choose your option</option>
-                  <option id="beerName" value="1">Beer Name</option>
-                  <option id="breweryNames" value="2">Brewery Name</option>
-                  <option id="breweryLocations" value="3">Brewery Locations by ZipCode</option>
-                  
-                </select>
-                <label>Select how you search for beers</label>
-              </div>
-            </div>
-            
-            <div class="row">
-                    Search Beers By Name
-                      <div class="col-md-6">
-                        <form>
-                            <div class="input-field">
-                              <input id="beerNameSearch1" type="search" required>
-                              <label for="search"><i class="material-icons">search</i></label>
-                              <i class="material-icons">close</i>
-                            </div>
-                            <button class="btn amber accent-3 waves-effect waves-light search1" type="submit" name="action">Search
-                              <i class="material-icons right">send</i>
-                          </button>
-                      </form>
-
-                      </div>
-                      
-            </div>
-
-          </div>
-
-          <!-- Second Column for WIne Search -->
-          <div class="col-md-6">
-
-          </div>
-           
-            
-    </div> <!-- section -->
-
-  </div> <!-- div container for Search-->
-
-    
   
-
-
        <!-- Parallax-->
       <div class="parallax-container">
       <div class="parallax"><img src="pictures/file0001821527001.jpg"></div>
@@ -270,10 +307,13 @@
 
   </div> <!-- end of container -->
     
+
       <!-- Parallax-->
-      <div class="parallax-container">
-      <div class="parallax"><img src="pictures/turpan_vineyard_web.jpg"></div>
-    </div>
+      <div class="section">
+        <div class="parallax-container">
+          <div class="parallax"><img src="pictures/turpan_vineyard_web.jpg"></div>
+        </div>
+      </div>
     <!--end of parallax-->
 
 
@@ -305,7 +345,7 @@
       
 
    <!-- Footer -->
-\
+
     <div id="footer">
       <footer >
        
