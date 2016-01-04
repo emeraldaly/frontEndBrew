@@ -1,180 +1,288 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>beer select page</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/beerselect.css">
+    <title>beer select page</title>
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+
+      <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous"> -->
+
+    <!-- Compiled and minified CSS -->
+  
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
+
 <body>
-<body class>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-       <a class="navbar-brand" href="#">
-     </a> 
-    </div>
-    </nav>
-<!--jumbotron heading-->    
-<div class="jumbotron">
-  <div id="#jumbo">
-    <div class="center-block">
-        <h1>Make your next order great.</h1>
-        <p>Customize your order by selecting up to six wines from this month's selection</p>
-        <p><a class="btn btn-primary btn-lg" href="home.html" role="button">Back to home</a></p>
-    </div>
-  </div>
-</div>
-<!--beer selection in container-->
-<main class="container">
- <div class="panel panel-default" div id="beerselect">
-  <div class="panel-heading text-center">Explore this month's selection of fine beers.</div>
-   <div class="panel-body text-center" div id="beerbody">      
-     <div class="inline">
-        <div class="thumbnail">
-          <img src="" alt="">
-             <div class="caption">
-                <h3></h3>
-                  <p></p>
-                    <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                    </button></p>
+<div class="container">
+        <!-- this section "header" is for the nav bar-->
+    <div class="row">
+            <!-- nav bar by Carolyn -->
+            <!--static navbar-->
+      
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s3">
+            <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">breWineFinder.com</a>
+          </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="uberRide.html">Rides by Uber</a></li>
+            <li><a href="login.html">Log in</a></li>
+          </ul>
+        </div>
+      </nav>
+        <!--jumbotron heading-->
+        <div class="jumbotron">
+            <div id="#jumbo">
+                <div class="center-block">
+                    <h1>Make your next order great.</h1>
+                    <p>Customize your order by selecting up to six beers from this month's selection</p>
+                    <p><a class="btn btn-primary btn-lg" href="home.html" role="button">Back to home</a></p>
                 </div>
-              </div>
             </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+        </div>
+        <!--modal for search by beer type, location and ingredients-->
+        <div class="container">
+            <div class="row">
+                <div class="text-align: center">
+                    <div class="col-sm-4">
+                        <div class="well well-sm">
+                            <h1>Perform searches by clicking the button below.</h1>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Search
+                            </button>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Search by brewery, type of beer, location, and ingredients.</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>Search by brewery.</h3>
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+               <button class="btn btn-default" type="button">Go!</button>
+             </span>
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-sm-6 -->
+                                    <h3>Search by type of beer.</h3>
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+               <button class="btn btn-default" type="button">Go!</button>
+             </span>
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-sm-6 -->
+                                    <h3>Search by location.</h3>
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-sm-6 -->
+                                    <h3>Search by ingredients.</h3>
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-sm-6 -->
+                                </div>
+                                <!-- /.row -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+                    <!--beer selection in container-->
+                    <main class="container">
+                        <div class="panel panel-default" div id="beerselect">
+                            <div class="panel-heading text-center">Explore this month's selection of fine beers.</div>
+                            <div class="panel-body text-center" div id="beerbody">
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="https://c2.staticflickr.com/6/5833/22321793459_6ef491ef9b.jpg" alt="http://3.bp.blogspot.com/-H_dh9v9gpEQ/TtQ2fyJ9JII/AAAAAAAAAIg/VAlGGZ7UaP4/s1600/IMG00261-20111119-1551.jpg">
+                                        <div class="caption">
+                                            <h3>Fireside Chat - Winter Spiced Ale</h3>
+                                            <p>Named after FDR’s famous 1930s radio addresses, Fireside Chat is a subtle twist on the traditional winter fare. Brewed like a classic, warming Strong Ale, it kicks things up a notch with a subtle blend of hand-selected spices for just the right festive flair.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer1.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="https://beerdoctor.files.wordpress.com/2011/12/affligem-noel.jpg" height="500 px" width="330 px" alt="https://thebeerauthority.files.wordpress.com/2012/11/affligem-noel.jpg?w=357">
+                                        <div class="caption">
+                                            <h3>Affligem: Noël</h3>
+                                            <p>As the name suggests, this is a traditional Christmas beer. This delicious ale is rich and dark like the Affligem Dubbel yet sumptuous and smooth like the Affligem Tripel. It’s the sort of perfect harmony that we can all appreciate this time of year.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer2.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="http://apintofhoppiness.com/wp-content/uploads/2014/12/avbc-winter-solstice-set.jpg" height="500 px" width="330 px" alt="https://beercanrevolution.files.wordpress.com/2011/12/winter_solstice_seasonal_ale.jpg">
+                                        <div class="caption">
+                                            <h3>Anderson Valley: Winter Solstice</h3>
+                                            <p>As the longest night of the year, we recommend you spend the winter solstice inside curled up next to a roaring fire with a beer in hand. And we have the perfect beer for the occasion. Anderson Valley’s Winter Solstice is a deep amber ale with an inviting aroma of spice and nutmeg. It possesses subtle hops and fruity notes which perfectly balance the flavors of roasted caramel and a secret blend of winter spices.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer3.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="http://brooklynbrewery.com/blog/wp-content/uploads/2012/01/DSC_2252.jpg" height="500 px" width="330 px" alt="http://www.scienceline.org/wp-content/uploads/2010/12/BlackChocolateStout-640x480.jpg">
+                                        <div class="caption">
+                                            <h3>Brooklyn: Black Chocolate Stout</h3>
+                                            <p>What’s the holiday season without a little chocolate? Brooklyn’s famous Black Chocolate Stout is a take on the Imperial Stout style once made exclusively for Catherine the Great. Three mashes are used to brew each batch achieving a luscious deep, dark chocolate flavor through a blend of specially roasted malts.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer4.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="http://2.bp.blogspot.com/-FvNXHVrDOnM/VHuZwpUCAkI/AAAAAAAAV5U/mglp4hmJGco/s1600/Lagerheads-Winter-Mischief.jpg" height="500 px" width="330 px" alt="http://grabmeabeer.net/wp-content/uploads/2012/11/wintermischief.jpg">
+                                        <div class="caption">
+                                            <h3>Lager Heads: Winter Mischief</h3>
+                                            <p>The pride of Medina, Ohio has thrown their hat into the winter ale arena as well. This rich, full-bodied, deep amber ale is brewed with honey and spices making it the perfect beer to keep you warm on a cold, Ohio winter evening.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer5.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="https://bikesbeerbirds.files.wordpress.com/2012/09/dsc03820.jpg?w=590&h=392" height="500 px" width="330 px" alt="http://4.bp.blogspot.com/_eziDJu6Xj9I/S7AtBCz5P_I/AAAAAAAABEM/J1D9UhpjwPs/s1600/beer+etc.+060.jpg">
+                                        <div class="caption">
+                                            <h3>Mt. Carmel: Winter Ale</h3>
+                                            <p>From the eastside of Cincinnati comes this festive ale that calls to mind the holidays with scents of spruce and ginger mingling with the flavors of orange-spiced break. Just cracking this beer open will put you in the Christmas spirit regardless of where you’re enjoying it.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="yuchosebeer5.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="http://1.bp.blogspot.com/-a3pYLM-jcPg/TsgXxJ2RXnI/AAAAAAAADDE/Pgc4b1A2MV8/s1600/Ommegang+Adoration.JPG" height="500 px" width="330 px" alt="http://media2.fdncms.com/atlanta/imager/seasons-greetings-from-brewery-ommegang/u/original/1456913/adoration-291x400.jpg">
+                                        <div class="caption">
+                                            <h3>Ommegang: Adoration</h3>
+                                            <p>Brewed in the authentic style of a Belgian Winter, or Noel Beer, Adoration is dark, malty, and assertively spiced. Even at 10% ABV, the beer is well balanced and not at all hot or fiery. The dark malts give it lush, malty flavors, and aromas, complemented by its five spices: coriander, orange peel, mace, cardamom, and grains of paradise. It’s the perfect beer for a ride on a one horse open sleigh.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer7.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="http://oregonbeerproject.com/img/bottle/rogue-santas-private-reserve.jpg" height="500 px" width="330 px" alt="http://www.betterbeerblog.com/wp-content/uploads/2010/12/12dayd10-glass.jpg">
+                                        <div class="caption">
+                                            <h3>Rogue: Santa’s Private Reserve</h3>
+                                            <p>While we haven’t asked him personally, we’re pretty confident in saying that this is the beer of choice of Santa and his elves. A double hopped Red Ale, with an appropriate reddish hue, it has a roasty, malty flavor with a well-balanced spruce finish.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer8.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="https://kd59.files.wordpress.com/2010/02/samuel_smiths_winter_welcome_ale.jpg" height="500 px" width="330 px" alt="http://3.bp.blogspot.com/-3v02q2YWjhc/VBn05dqDZDI/AAAAAAAAAcQ/D5DimLiRNfo/s1600/b183_sam_smith_winter_welcome.jpg">
+                                        <div class="caption">
+                                            <h3>Samuel Smith: Winter Welcome</h3>
+                                            <p>A limited edition brewed specifically for the short days and long nights of winter, Winter Welcome Ale’s full body is the result of fermentation in “stone Yorkshire squares.” The luxurious malt character, which can be enjoyed by a broad range of drinkers, is balanced against whole-dried Fuggle and Golding hops with nuances and complexities that are best contemplated before an open fire.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer9.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div class="thumbnail">
+                                        <img src="https://yearofbeer.files.wordpress.com/2010/01/smutty-winter.jpg" height="500 px" width="330 px" alt="https://thebeerauthority.files.wordpress.com/2012/11/smuttynose.jpg?w=230&h=298">
+                                        <div class="caption">
+                                            <h3>Smuttynose: Winter Ale</h3>
+                                            <p>A full-bodied, amber beer brewed in a special Trappist ale yeast, Smuttynose’s Winter Ale is stylistically reminiscent of a Belgian Abbey Double. It features fruity aromas and flavors and is balanced by soft, Crystal hops.</p>
+                                            <p><span class="glyphicon glyphicon-grain"></span>
+                                                <a class="btn btn-primary btn large" href="youchosebeer10.html" role="button">Select Beer</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </main>
+                <br/>
+                <br/>
+                <br/>
+                <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+                    <div class="container">
+                        <div class="collapse navbar-collapse navHeaderCollapse">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>
+                                    <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.github.com/ctevnan" target="_blank">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
-                    </div>
-              </div>
-       </div>                  
-    </div>
-  </div> 
-</main>
-<br/>
-<br/>
-<br/>
-<footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
-    <div class="collapse navbar-collapse navHeaderCollapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li>
-          <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
-            <i class="fa fa-linkedin">
-            </i>
-          </a>
-        </li>
-        <li>
-         <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
-           <i class="fa fa-twitter">
-           </i>
-          </a>
-        </li>
-         <li>
-            <a href="http://www.github.com/ctevnan" target="_blank">
-             <i class="fa fa-github">
-             </i>
-            </a>
-         </li>
-      </ul>
-    </div>
-  </div>
-</aside>
-</footer>
- <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</body>
+                    </aside>
+                </footer>
+                <!-- jQuery CDN -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </body>
+
 </html>

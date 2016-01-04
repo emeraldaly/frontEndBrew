@@ -1,179 +1,342 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>wine select page</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/wineselect.css">
+    <title>wine select page</title>
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+
+      <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous"> -->
+
+    <!-- Compiled and minified CSS -->
+  
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        .show-on-hover:hover > ul.dropdown-menu {
+            display: block;    
+        }
+    </style>
 </head>
+
 <body>
-<body class>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-       <a class="navbar-brand" href="#">
-     </a> 
-    </div>
-    </nav>
-<div class="jumbotron">
-  <div id="#sojumbo">
-    <div class="center-block">
-        <h1>Make your next order great</h1>
-        <p>Customize your order by selecting up to six wines from this month's selection</p>
-        <p><a class="btn btn-primary btn-lg" href="home.html" role="button">Back to home</a></p>
-      </div>
-    </div>
-</div>
-<!--beer selection in container-->
-<main class="container">
- <div class="panel panel-default" div id="wineselect">
-  <div class="panel-heading text-center">Explore this month's selection of fine wines.</div>
-   <div class="panel-body text-center" div id="winebody">      
-     <div class="inline">
-        <div class="thumbnail">
-          <img src="" alt="">
-             <div class="caption">
-                <h3></h3>
-                  <p></p>
-                    <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                    </button></p>
+<div class="container">
+        <!-- this section "header" is for the nav bar-->
+    <div class="row">
+            <!-- nav bar by Carolyn -->
+            <!--static navbar-->
+      
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s3">
+            <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">breWineFinder.com</a>
+          </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="uberRide.html">Rides by Uber</a></li>
+            <li><a href="login.html">Log in</a></li>
+          </ul>
+        </div>
+      </nav>
+        <div class="jumbotron">
+            <div id="#sojumbo">
+                <div class="center-block">
+                    <h1>Make your next order great</h1>
+                    <p>Customize your order by selecting up to six wines from this month's selection</p>
+                    <p><a class="btn btn-primary btn-lg" href="home.html" role="button">Back to home</a></p>
                 </div>
-              </div>
             </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+        </div>
+
+        <!--beer selection in container-->
+        <main class="container">
+            <div class="panel panel-default" div id="wineselect">
+                <div class="panel-heading text-center">Explore this month's selection of fine wines.</div>
+                <div class="panel-body text-center" div id="winebody">
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                           
+
+                            <h3>Wine Types</h3>
+                                <p>There are two main wine categories. There is red wine and there is white wine.</p>
+                             <button class="btn btn-primary clickButton" data-toggle="modal" data-target="#gameModal">Click here for a brief educational summary on red and white wine</button>
+                                <div class="modal fade" id="gameModal">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                         <p>As a general rule, red wine is mainly used for pairing in dining with meat. These meats can range from steaks to chicken, etc.</p>
+                                         <p>Also as a general rule, white wine is mainly used for pairing in dining with seafood.</p>
+                                    </div>
+                                    </div>     
+                                    </div>
+                                </div>
+
+
+                            <img src="https://image.freepik.com/free-vector/red-and-white-wine-glasses_23-2147496692.jpg" height="300px" width="300px" alt="wine categories">
+                            <div class="caption">
+        
+                                
+                                <p>
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+                    <div class="inline">
+                        <div class="thumbnail">
+                        <!-- this section is for the order button-->
+                            <div class="container">
+                                <div class="btn-group show-on-hover pull-left">
+                                          <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                            Order <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Order Quantity x</a></li>
+                                          </ul>
+                                        </div>
+                                </div>
+
+                            <p><strong>Type:</strong> Red</p>
+                            <p><strong>Brand:</strong> Red Rock</p>
+                            <p><strong>Description:</strong> From California; aged approximately 9 months prior to bottling and aged another 2 months prior to release.</p>
+
+                            <img src="http://www.redrockwinery.com/resources/img/family-shot.png" height="200px" width="200px" alt="">
+                            <div class="caption">
+                            
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                            <div class="container">
+                                <div class="btn-group show-on-hover pull-left">
+                                          <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                            Order <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Order Quantity x</a></li>
+                                          </ul>
+                                        </div>
+                                </div>
+
+                            <p><strong>Type:</strong> Red</p>
+                            <p><strong>Brand:</strong> Tesco </p>
+                            <p><strong>Description:</strong> From Sicily; critics say it's in the running as the ultimate pizza wine.</p>
+                            <img src="http://img.tesco.com/groceries/pi/207/5053947714207/IDShot_150x300.jpg"  height="200px" width="200px" alt="">
+                            <div class="caption">
+                                
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                            <div class="container">
+                                <div class="btn-group show-on-hover pull-left">
+                                          <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                            Order <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Order Quantity x</a></li>
+                                          </ul>
+                                        </div>
+                                </div>
+
+                            <p><strong>Type:</strong> Red</p>
+                            <p><strong>Brand:</strong> Marks and Spencer </p>
+                            <p><strong>Description:</strong> From France; delightfully smooth and bursting with red forest fruits.</p>
+                            <img src="http://asset1.marksandspencer.com/is/image/mands/HT_FD_F23A_00901536_NC_X_EC_0?$PDP_MAXI_ZOOM$" height="200px" width="200px"  alt="">
+                            <div class="caption">
+                
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                            <div class="container">
+                                    <div class="btn-group show-on-hover pull-left">
+                                              <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                                Order <span class="caret"></span>
+                                              </button>
+                                              <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Order Quantity x</a></li>
+                                              </ul>
+                                            </div>
+                                    </div>
+
+                            <p><strong>Type:</strong> White</p>
+                            <p><strong>Brand:</strong> YellowTail </p>
+                            <p><strong>Description:</strong> From Australia; has had an extended time in oak, tastes like tropical fruits.</p>
+                            <img src="http://www.totalwine.com/media/sys_master/twmmedia/he5/h4a/8809305636894.png" height="200px" width="200px" alt="">
+                            <div class="caption">
+                               
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                            <div class="container">
+                                <div class="btn-group show-on-hover pull-left">
+                                          <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                            Order <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Order Quantity x</a></li>
+                                          </ul>
+                                        </div>
+                                </div>
+
+                            <p><strong>Type:</strong> White</p>
+                            <p><strong>Brand:</strong> Sutter Home </p>
+                            <p><strong>Description:</strong> From California; contains essences of strawberry and melon, encouraged to be tried with spicy food.</p>
+                            <img src="http://www.sutterhome.com/sites/default/files/styles/wine_detail/public/wine/white-zinfandel-details_0_0.png?itok=w9LgS3hI" height="200px" width="200px" alt="">
+                            <div class="caption">
+                                
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+
+                            <div class="container">
+                                <div class="btn-group show-on-hover pull-left">
+                                          <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown">
+                                            Order <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Order Quantity x</a></li>
+                                          </ul>
+                                        </div>
+                                </div>
+
+                            <p><strong>Type:</strong> White</p>
+                            <p><strong>Brand:</strong> Beringer </p>
+                            <p><strong>Description:</strong> From California; exhibits flavors of poached pear, pineapple, honeysuckle and buttery melon notes.</p>
+                            <img src="http://www.beringer.com/assets/thirdparty/wines//originals/BER_ChardLum-OakKnoll4.png" height="150px" width="150px" alt="">
+                            <div class="caption">
+                                
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+                            <img src="" alt="">
+                            <div class="caption">
+                                <h3></h3>
+                                <p></p>
+                                <p>
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              <div class="inline">
-                    <div class="thumbnail">
-                      <img src="" alt="">
-                          <div class="caption">
-                             <h3></h3>
-                            <p></p>
-                            <p><button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                            </button></p>
-                          </div>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+                            <img src="" alt="">
+                            <div class="caption">
+                                <h3></h3>
+                                <p></p>
+                                <p>
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-       </div>                  
-    </div>
-  </div> 
-</main>
-<br/>
-<br/>
-<br/>
-<footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
-    <div class="collapse navbar-collapse navHeaderCollapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li>
-          <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
-            <i class="fa fa-linkedin">
-            </i>
-          </a>
-        </li>
-        <li>
-         <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
-           <i class="fa fa-twitter">
-           </i>
-          </a>
-        </li>
-         <li>
-            <a href="http://www.github.com/ctevnan" target="_blank">
-             <i class="fa fa-github">
-             </i>
-            </a>
-         </li>
-      </ul>
-    </div>
-  </div>
-</aside>
-</footer>
- <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</body>
+
+                    <div class="inline">
+                        <div class="thumbnail">
+                            <img src="" alt="">
+                            <div class="caption">
+                                <h3></h3>
+                                <p></p>
+                                <p>
+                                    <button type="button" class="btn-btn-large" aria label="Left Align"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+        <br/>
+        <br/>
+        <br/>
+        <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container">
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.github.com/ctevnan" target="_blank">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </aside>
+        </footer>
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/winesearch.js"></script>
+    </body>
+
 </html>
