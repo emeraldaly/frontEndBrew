@@ -1,4 +1,8 @@
 $(function() {
+  // Uber API Constants
+var uberClientId = "WLpbSEMABaOs_Q7X3gjvPeDrIu2ml4Jw"
+  , uberServerToken = "FKq58vkwun346eRHZ04PIcGsBP6UnA1Tq6fbBJ0U";
+
 // create placeholder variables
 var userLatitude
   , userLongitude;
