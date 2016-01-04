@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Log in Page</title>
     <html lang="en">
@@ -8,99 +7,151 @@
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-
       <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous"> -->
-
+    <!-- link to css page-->
+    <link rel="stylesheet" type="text/css" href="css/firebase.css">
     <!-- Compiled and minified CSS -->
-  
-
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-
 <body>
     <div class="container">
         <!-- this section "header" is for the nav bar-->
     <div class="row">
             <!-- nav bar by Carolyn -->
-            <!--static navbar-->
-      
+            <!--static navbar--> 
       <nav>
         <div class="nav-wrapper">
           <div class="col s3">
             <img src= "pictures/logo1img.png"><a href="#" class="brand-logo">breWineFinder.com</a>
           </div>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="home2.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="swoop.html">Rides by Uber</a></li>
+            <li><a href="uberRide.html">Rides by Uber</a></li>
             <li><a href="login.html">Log in</a></li>
           </ul>
         </div>
       </nav>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">breWineFind.com</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <form id="signin" class="navbar-form navbar-right" role="form">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
-                            </div>
-                        </form>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--jumbotron below-->
-    <div class="jumbotron">
-        <h1>Ready to log in?</h1>
-        <p>Please fill in all of the fields below.</p>
-        <p><a class="btn btn-primary btn-lg" href="home2.html" role="button">Back to home</a></p>
     </div>
-    
+ <header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="sr-only">Toggle navigation</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+            </button> <a href="#" class="navbar-brand">Firebase login</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li> <a href="#/">Login</a>
 
-                    <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
-                        <div class="container">
-                            <div class="collapse navbar-collapse navHeaderCollapse">
-                                <ul class="nav navbar-nav navbar-left">
-                                    <li>
-                                        <a href="http://www.linkedin.com/in/CarolynTevnan33" target="_blank">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.twitter.com/CarolynTevnan33" target="_blank">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://www.github.com/ctevnan" target="_blank">
-                                            <i class="fa fa-github"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        </aside>
-                    </footer>
+                </li>
+                <li> <a href="#/logout">Logout</a>
+
+                </li>
+                <li> <a href="#/register">Register</a>
+
+                </li>
+                <li> <a href="#/profile">Profile</a>
+
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="container" class="container">
+    <!-- LOGIN -->
+    <form id="frmLogin" role="form">
+         <h2>Login</h2>
+
+        <div class="form-group">
+            <label for="txtEmail">Email address</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
+        </div>
+        <div class="form-group">
+            <label for="txtPass">Password</label>
+            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" />
+        </div>
+        <button type="submit" class="btn btn-default btn-block">Login</button>
+        <br />
+        <br />
+         <h4>Login with</h4>
+ <a href="#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
+ <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
+
+        <!-- <a href="#" class="btn btn-danger bt-social" data-provider="google">Google+</a> --> <a href="#" class="btn btn-default bt-social" data-provider="github">GitHub</a>
+ <a href="#" class="btn btn-warning" id="btAnon">Anon</a>
+
+    </form>
+    <!-- / LOGIN -->
+    <!-- LOGOUT -->
+    <form id="frmLogout" role="form">
+         <h2>You are logged out!</h2>
+
+    </form>
+    <!-- / LOGOUT -->
+    <!-- REGISTER -->
+    <form id="frmRegister" role="form">
+         <h2>Register</h2>
+
+        <div class="form-group">
+            <label for="txtRegEmail">Email address</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
+        </div>
+        <div class="form-group">
+            <label for="txtRegPass">Password</label>
+            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" />
+        </div>
+        <button type="submit" class="btn btn-default">Register</button>
+    </form>
+    <!-- / REGISTER -->
+    <!-- PROFILE -->
+    <form id="frmProfile" role="form">
+         <h2>Profile</h2>
+
+        <br />
+        <div class="form-group">
+            <label for="txtName">Name</label>
+            <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
+        </div>
+        <div class="form-group">
+            <label for="ddlDino">Favorite Dinosaur</label>
+            <select id="ddlDino" name="favoriteDinosaur" class="form-control">
+                <option>None</option>
+                <option>Pteranodon</option>
+                <option>Lambeosaurus</option>
+                <option>Stegosaurus</option>
+                <option>Daspletosaurus</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <!-- / PROFILE -->
+    <hr />
+    <!-- ALERT BOX -->
+    <div id="alert" class="alert" role="alert">
+         <h4 id="alert-title">You are not logged in</h4>
+        <p id="alert-detail"></p>
+    </div>
+    <!-- / ALERT BOX -->
+</div>   
+<footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="collapse navbar-collapse navHeaderCollapse">
+      <ul class="nav navbar-nav navbar-left">
+      </ul>
+    </div>
+  </div>
+</footer>
 </body>
-
 </html>
 <!--jQuery-->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -112,6 +163,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!--js for firebase-->
+<script type="text/javascript" src="js/firebase.js"></script>
 </body>
 
 </html>
