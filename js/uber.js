@@ -5,18 +5,14 @@ var uberServerToken = "FKq58vkwun346eRHZ04PIcGsBP6UnA1Tq6fbBJ0U";
 
 // Create variables to store latitude and longitude
 var userLatitude
-  , userLongitude
-  , partyLatitude = 40.7283405
-  , partyLongitude = -73.994567;
+var userLongitude
+var partyLatitude = 40.7283405
+var partyLongitude = -73.994567;
 
 navigator.geolocation.watchPosition(function(position) {
     // Update latitude and longitude
     userLatitude = position.coords.latitude;
     userLongitude = position.coords.longitude;
-
-  // Query Uber API if needed
-    getEstimatesForUserLocation(userLatitude, userLongitude);
-});
 
 function getEstimatesForUserLocation(latitude,longitude) {
   $.ajax({
@@ -36,4 +32,5 @@ function getEstimatesForUserLocation(latitude,longitude) {
     }
   });
 };
+});
 });  
