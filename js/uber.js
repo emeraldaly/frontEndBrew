@@ -19,7 +19,7 @@ function getEstimatesForUserLocation(latitude,longitude) {
     type: "GET",
     url: "https://api.uber.com/v1/estimates/price",
     headers: {
-      Authorization: "Token" 
+      Authorization: "Token",
     },
     data: {
       start_latitude: latitude,
