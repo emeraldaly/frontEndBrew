@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 //*Not working* = URL for Location Search: api.brewerydb.com/v2/breweries?key=XXXXXX&withLocations=Y
 
-//Brweries by General Search
+//Breweries by General Search
 //http://api.brewerydb.com/v2/search?q=60%2Bminute&type=beer&key=4d31671ed97df8dccb12177e18f94199
 
 //Breweries by Beer Search Example: Coors Light
@@ -106,6 +106,38 @@ function endpointBreweryDB (){
 
 };
 
+brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
+
+
+//AJAX Call to access the endpoint
+  $.ajax({
+    type: "Get",
+    dataType: 'json',
+    //GET: "/location/d25euF",
+
+    //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+    //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+    //url: "http://requestb.in/1cacuu41",
+    url: brewDBAPI,
+
+    success: function(brews){
+        //var brewResponse =JSON.parse(brews);
+        //console.log(brews.data[4]);
+        console.log(brews);
+        console.log(brews.data[0].name);
+      //for(var i =0; i< drinks.length; i++){
+        debugger
+        //console.log(drinks[i]);
+        //console.log(brews[1][0])
+      },
+    
+    error: function ( jqXHR, textStatus, errorThrown ) {
+      console.log("something went wrong");
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown); 
+    }
+  }); //End of AJAX call
 
 
 /*

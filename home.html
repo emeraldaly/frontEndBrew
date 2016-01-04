@@ -50,14 +50,9 @@
       </div> 
     </div> <!-- end of container-fluid -->
 
-  <div class="container"> <!-- <div class="container"> -->
-
-
-      
-  
+  <div class="container-fluid"> <!-- <div class="container"> --> 
 
 <!-- Marc's Carousel  this is section for the pictures section of our homepage-->
-
     <div class="slider">
         <ul class="slides">
           <li>
@@ -84,57 +79,61 @@
           
         </ul>
       </div>
-    
+  </div> <!-- div container -->
 <!-- ...................End of Marc's Carousel   .................-->
     
 
 
-
-
-    <div class="divider"></div>
+<div class="container">
+  <div class="divider"></div>
       <div class="section">
         <h3>Find the beer or wine you want.</h3>
-        <p>This will be our search Panel. Search for beers, breweries, wines, and vineyards. Needs the Search Button, data tags,JS. </p>
+        <p>This will be our search Panel. Search for beers, breweries, wines, and vineyards.</p>
+        
+        <div class="row">
+          <div class="col s1">1</div>
+          <div class="col s1">2</div>
+          <div class="col s1">3</div>
+          <div class="col s1">4</div>
+          <div class="col s1">5</div>
+          <div class="col s1">6</div>
+          <div class="col s1">7</div>
+          <div class="col s1">8</div>
+          <div class="col s1">9</div>
+          <div class="col s1">10</div>
+          <div class="col s1">11</div>
+          <div class="col s1">12</div>
+        </div>
+        <div class="col md6">
 
-        <div class="panel panel-default" div id="beerAndWineSearch">
-          <div class="panel-heading text-center"> heading moved to h5
+          <div class="row">
+            <div class="input-field col s12 md 6">
+              <select>
+                <option id="userBeerOptions" value="" disabled selected>Choose Beer or Wines</option>
+                <option id="beerName" value="1">Beers</option>
+                <option id="breweryNames" value="2">Wines</option>
+               
+                
+              </select>
+
+              <label>Select how you search for beers</label>
+            </div>
+
+            <div class="input-field col s12 md6">
+              <select>
+                <option id="userBeerOptions" value="" disabled selected>Choose your option</option>
+                <option id="beerName" value="1">Beer Name</option>
+                <option id="breweryNames" value="2">Brewery Name</option>
+                <option id="breweryLocations" value="3">Brewery Locations by ZipCode</option>
+                
+              </select>
+              <label>Select how you search for beers</label>
+            </div>
           </div>
-
-          <div class="panel-body text-center" div id="searchBody">
-            <div class="inline">
-              <div class="thumbnail search">
-
-                <div class="caption">
-                  <h5>Results should pop up in another page or on Page? Can select By DropDown or simple Search?</h5>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <select>
-                        <option id="userBeerOptions" value="" disabled selected>Choose Beer or Wines</option>
-                        <option id="beerName" value="1">Beers</option>
-                        <option id="breweryNames" value="2">Wines</option>
-                       
-                        
-                      </select>
-
-                      <label>Select how you search for beers</label>
-                    </div>
-                    <div class="input-field col s12">
-                      <select>
-                        <option id="userBeerOptions" value="" disabled selected>Choose your option</option>
-                        <option id="beerName" value="1">Beer Name</option>
-                        <option id="breweryNames" value="2">Brewery Name</option>
-                        <option id="breweryLocations" value="3">Brewery Locations by ZipCode</option>
-                        
-                      </select>
-                      <label>Select how you search for beers</label>
-                    </div>
-                  </div>
-                  
-                  <div class="divider"></div>
-                  
-                  <div class="row">
+          
+          <div class="row">
                   Search Beers By Name
-                    <div class="col-md-3">
+                    <div class="col md 6">
                       <form>
                           <div class="input-field">
                             <input id="beerNameSearch1" type="search" required>
@@ -148,7 +147,27 @@
 
                     </div>
                     
-                  </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+
+          </div>
+        <div class="panel panel-default" div id="beerAndWineSearch">
+          <div class="panel-heading text-center"> heading moved to h5
+          
+          </div>
+          
+          
+            <div class="panel-body text-center" div id="searchBody">
+            
+              <div class="inline">
+                <div class="thumbnail search">
+
+                  
+                  <div class="divider"></div>
+                  
+                  
 
                   <div class="row">
                   Search for Brewery By name
@@ -179,60 +198,70 @@
                     </form>
                   </div>
                   
-                  <div class="row">
-                    <span class="glyphicon glyphicon-grain"></span>
+                    <div class="row">
+                      <span class="glyphicon glyphicon-grain"></span>
                     
-                  </div>
+                    </div>
                   
-                </div>
+                  </div>
 
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div>  
+          
+        </div> <!-- section -->
+
+</div> <!-- div container for Search-->
+
+    
+  
 
 
        <!-- Parallax-->
       <div class="parallax-container">
-      <div class="parallax"><img src="pictures/brewery1.jpg"></div>
+      <div class="parallax"><img src="pictures/file0001821527001.jpg"></div>
     </div>
     <!--end of parallax-->
 
-
+  <div class="container">
     <div class="divider"></div>
-      <div class="section">
+    <div class="section">
         <h5>Explore this month's selection of fine beers.</h5>
         <p>Stuff</p>
 
         <!-- Second Panel: Beer Panel -->
     
-        <div class="panel panel-default" div id="beerandwineselect">
-          <div class="panel-heading text-center">moved to h5
-          </div>
-          <div class="panel-body text-center" div id="bandwbody">
-            <div class="inline">
-              <div class="thumbnail">
-                <img class="img-circle" src="http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg" alt="https://hereandnowresorts.files.wordpress.com/2014/07/7-28-14-now-sapphire_bar.jpg">
-                <div class="caption">
+      <div class="panel panel-default" div id="beerandwineselect">
+        <div class="panel-heading text-center">moved to h5
+        </div>
+          
+        <div class="panel-body text-center" div id="bandwbody">
+          <div class="inline">
+            <div class="thumbnail">
+              <img class="img-circle" src="http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg" alt="https://hereandnowresorts.files.wordpress.com/2014/07/7-28-14-now-sapphire_bar.jpg">
+              <div class="caption">
                   <h3>Our beer selection:</h3>
                   <span class="glyphicon glyphicon-grain"></span>
                   <a class="btn btn-primary btn large" href="beerselect.html" role="button">Beer</a>
-                </div>
               </div>
             </div>
           </div>
-        </div> <!-- End of Second Panel: Beer Panel-->
-      </div> 
+        </div>
+      </div> <!-- End of Second Panel: Beer Panel-->
+    </div>  <!-- end of section -->
 
+  </div> <!-- end of container -->
+    
       <!-- Parallax-->
       <div class="parallax-container">
       <div class="parallax"><img src="pictures/turpan_vineyard_web.jpg"></div>
     </div>
     <!--end of parallax-->
 
-    <div class="divider"></div>
-      <div class="section">
+
+  <div class="container">
+    <div class="section">
         <h5>Explore this month's selection of fine wines.</h5>
         <p>Stuff</p>
 
@@ -254,8 +283,11 @@
             </div>
         </div> <!-- End of Third Panel: Wine Panel -->
       </div>
+  </div> <!-- end of container -->
+    <div class="divider"></div>
+      
           
-</div> <!-- end of container -->
+
 
     <!-- Footer -->
     <div id="footer">
