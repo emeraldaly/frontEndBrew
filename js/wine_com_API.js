@@ -2,13 +2,13 @@
 
 $(document).ready(function(){
 
-});
-var userWineSearch;
+  var userWineSearch;
 var wineAPIkey = "apikey=29be091f5bd59025f02d4ac450384cf7";
 var wineAPIurl = "http://services.wine.com/api/beta2/service.svc/json/catalog?"
-wineAPIurl += wineAPIkey;
+
 wineAPIurl += "search=";
 wineAPIurl += userWineSearch;
+wineAPIurl += wineAPIkey;
 
 //Example: http://services.wine.com/api/beta2/service.svc/format/resource?apikey=key&parameters
 
@@ -21,7 +21,7 @@ wineAPIurl += userWineSearch;
     type: "Get",
 
     
-    url: brewDBAPI,
+    url: "http://services.wine.com/api/beta2/service.svc/json/catalog?search=mondavi+cab&size=5&offset=10&apikey=29be091f5bd59025f02d4ac450384cf7",
     success: function(wines){
         
         console.log(wines);
@@ -38,3 +38,6 @@ wineAPIurl += userWineSearch;
       console.log(textStatus);
       console.log(errorThrown); 
     }
+  });
+
+});
