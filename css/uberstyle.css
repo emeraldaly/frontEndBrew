@@ -1,5 +1,5 @@
 body {
-  background: url(../microbrewery_web.jpg);
+  background: url('../pictures/microbrewery_web.jpg');  
   background-size: cover;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -61,7 +61,7 @@ a {
 }
 
 .button {
-  background-image: url('../img/UBER_API_Button_2x_Grey_hard edge.png');
+  background-image: url('../pictures/UBER_API_Button_2x_Grey_hard edge.png');
   background-size: cover;
   width: 280px;
   height: 45px;
