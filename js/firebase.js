@@ -57,11 +57,11 @@
 
     // Handle Email/Password login
     // returns a promise
-    function authWithPassword(userObj) {
+    function authWithPassword(userObject) {
         var deferred = $.Deferred();
-        console.log(userObj);
-        rootRef.authWithPassword(userObj, function onAuth(err, user) {
-            if (err) {
+        console.log(userObject);
+        rootRef.authWithPassword(userObject, function onAuth(error, user) {
+            if (error) {
                 deferred.reject(err);
             }
 
@@ -76,9 +76,9 @@
 
     // create a user but not login
     // returns a promsie
-    function createUser(userObj) {
+    function createUser(userObject) {
         var deferred = $.Deferred();
-        rootRef.createUser(userObj, function (err) {
+        rootRef.createUser(userObject, function (error) {
 
             if (!err) {
                 deferred.resolve();
@@ -91,10 +91,10 @@
         return deferred.promise();
     }
 
-    // Create a user and then login in
+    // Create a user and then log in
     // returns a promise
-    function createUserAndLogin(userObj) {
-        return createUser(userObj)
+    function createUserAndLogin(userObject) {
+        return createUser(userObject)
             .then(function () {
             return authWithPassword(userObj);
         });
