@@ -65,7 +65,7 @@ var brewDBAPI;
 
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
-    brewDBAPI += "beers?name=" + queryString;
+    brewDBAPI += "search?q=" + queryString + "&type=beer";
 
     brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     
@@ -94,13 +94,16 @@ var brewDBAPI;
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
           console.log(brews);
+
           console.log(brews.data[0].name);
-          
-        //for(var i =0; i< drinks.length; i++){
-          //debugger
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].name);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
-        },
+          }
+      },
       
       error: function ( jqXHR, textStatus, errorThrown ) {
         console.log("something went wrong");
