@@ -51,27 +51,23 @@ $(document).ready(function(){
     $.ajax({
       type: "Get",
       dataType: 'json',
-      //GET: "/location/d25euF",
-
-      //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-      //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-      //url: "http://requestb.in/1cacuu41",
+     
       url: APIurl,
 
       success: function(wines){
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
           console.log(wines);
-/*
-          console.log(wines.data[0].name);
 
-          for (var i = 0; i < wines.data.length; i++){
-            //debugger
-            console.log(winess.data[i].name);
-          //console.log(drinks[i]);
-          //console.log(brews[1][0])
+          console.log(wines.Products.List[0]);
+
+
+          for (var i = 0; i < wines.Products.List.length; i++){
+            debugger
+            console.log(wines.Products.List[i]);
+         
           }
-*/          
+         
       },
       
       error: function ( jqXHR, textStatus, errorThrown ) {
