@@ -4,6 +4,9 @@ $(document).ready(function(){
   var wineName;
   var wineNameEncoded
   var wineDotComAPIurl;
+  var winesByNames;
+  var wineriesByName;
+  var wineriesByZipCode;
 
 //Example: http://services.wine.com/api/beta2/service.svc/format/resource?apikey=key&parameters
 

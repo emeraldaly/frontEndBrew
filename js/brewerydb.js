@@ -4,6 +4,11 @@ var beerName;
 var breweryName;
 var beerLocationbyZipCode;
 var brewDBAPI;
+var beersByNames;
+var breweriesByName;
+var breweriesByZipCode;
+var breweriesDescriptionsByZipCode;
+
 
   $(".search1").on("click", function(e){
 
@@ -200,6 +205,12 @@ var brewDBAPI;
           for (var i = 0; i < brews.data.length; i++){
             //debugger
             console.log(brews.data[i].brewery.name);
+            console.log(brews.data[i].brewery.description);
+            breweriesByZipCode = brews.data[i].brewery.name;
+            breweriesDescriptionsByZipCode = brews.data[i].brewery.description
+            console.log(breweriesByZipCode);
+            console.log(breweriesDescriptionsByZipCode);
+
           //console.log(drinks[i]);
           //console.log(brews[1][0])
           }
