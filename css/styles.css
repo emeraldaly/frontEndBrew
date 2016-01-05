@@ -76,11 +76,13 @@ div > h5 {
 h3 {
  color: black;
  font-size: 50px;
+ text-shadow: 2px 2px #ccffcc;
 }
 
 h5{
   color: white;
   font-size:40px;
+  text-shadow: 2px 2px #000066;
 }
 
 .row-search h5 {
@@ -97,5 +99,7 @@ h5{
 .parallax-container {
       height: 250px;
 }
+
+
 
 
