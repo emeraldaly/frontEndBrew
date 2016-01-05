@@ -1,5 +1,42 @@
 $(document).ready(function(){
 
+var beerName;
+var breweryName;
+var beerLocationbyZipCode;
+var brewDBAPI;
+
+  $(".search1").on("click", function(e){
+
+    e.preventDefault();
+
+    //alert("search button 1 works"); //Testing Search Now Button 
+
+    beerName = $("#beerNameSearch1").val();
+
+    console.log(beerName);  //Does the variable save the name? 
+    
+    breweryDBurlAPIbeersByName (beerName);         //Run the url function
+
+    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+  });
+
+
+
+//Search For Brewery 
+  $(".search3").on("click", function(e){
+
+    e.preventDefault();
+
+    alert("search button 3 works"); //Testing Search Now Button 
+
+    breweryName = $("#breweryNameSearch3").val();
+
+    console.log(breweryName);  //Does the variable save the name? 
+    
+    breweryDBurlAPIbreweriesByName (breweryName);         //Run the url function
+
+    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+  });
 
 
 
@@ -10,9 +47,9 @@ $(document).ready(function(){
 //http://api.brewerydb.com/v2/search?q=60%2Bminute&type=beer&key=4d31671ed97df8dccb12177e18f94199
 
 
-//Search Beer By Name:
+//Search Beer By Name: 60 Minute IPA
 //https://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199
-// %20 = space
+//%20 = space
 
 
 //Locations
@@ -32,112 +69,81 @@ $(document).ready(function(){
  //http://api.brewerydb.com/v2/beers?name=coors%20light&withBreweries=Y&key=4d31671ed97df8dccb12177e18f94199
 
 
+//brewDBAPI += "/beer/random";
+    //http://api.brewerydb.com/v2/search?q=%2218%22+Imperial+IPA&key=4d31671ed97df8dccb12177e18f94199
+//TEST: brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
+//brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
+
+
 //A Function To Run the Search based on the URL we specify
 
-/*
-  function breweryDBurlAPI () {
 
-    var brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
+  function breweryDBurlAPIbeersByName (queryString) {
+
+    brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
+    brewDBAPI += "search?q=" + queryString + "&type=beer";
 
-    if (  ) { //if option selected is Beer Names, add /beers?names to end of API URL
-      alert("Beers by Name was selected")
-      //brewDBAPI += /beers?names
+    brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     
-    }else if (){
-      alert("Beers by Name was selected")
-
-      //brewDBAPI += /locations?postalCode=
-
-    } else if () {
-      alert("Beers by Name was selected")
-    };
-    
-    
-
-
-    brewDBAPI += "?key=4d31671ed97df8dccb12177e18f94199";
-    //brewDBAPI += "/beer/random";
-    //http://api.brewerydb.com/v2/search?q=%2218%22+Imperial+IPA&key=4d31671ed97df8dccb12177e18f94199
-
 
   };
 
-TEST: brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
+  function breweryDBurlAPIbreweriesByName (queryString) {
 
-*/
+    brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
+    
+    brewDBAPI += "search?q=" + queryString + "&type=brewery";
+
+    brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
+    
+
+  };
 
 
 
-function endpointBreweryDB (){
+  function endpointBreweryDB (APIurl){
 
   //Call the Endpoint URL builder
 
 
   //AJAX Call to access the endpoint
-  $.ajax({
-    type: "Get",
-    dataType: 'json',
-    //GET: "/location/d25euF",
+    $.ajax({
+      type: "Get",
+      dataType: 'json',
+      //GET: "/location/d25euF",
 
-    //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "http://requestb.in/1cacuu41",
-    url: brewDBAPI,
+      //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+      //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+      //url: "http://requestb.in/1cacuu41",
+      url: APIurl,
 
-    success: function(brews){
-        //var brewResponse =JSON.parse(brews);
-        //console.log(brews.data[4]);
-        console.log(brews);
-        console.log(brews.data[0].name);
-      //for(var i =0; i< drinks.length; i++){
-        debugger
-        //console.log(drinks[i]);
-        //console.log(brews[1][0])
+      success: function(brews){
+          //var brewResponse =JSON.parse(brews);
+          //console.log(brews.data[4]);
+          console.log(brews);
+
+          console.log(brews.data[0].name);
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].name);
+          //console.log(drinks[i]);
+          //console.log(brews[1][0])
+          }
       },
-    
-    error: function ( jqXHR, textStatus, errorThrown ) {
-      console.log("something went wrong");
-      console.log(jqXHR);
-      console.log(textStatus);
-      console.log(errorThrown); 
-    }
-  }); //End of AJAX call
+      
+      error: function ( jqXHR, textStatus, errorThrown ) {
+        console.log("something went wrong");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown); 
+      }
+    }); //End of AJAX call
 
-};
-
-brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/beers?name=60%20minute%20IPA&key=4d31671ed97df8dccb12177e18f94199";
+  };
 
 
-//AJAX Call to access the endpoint
-  $.ajax({
-    type: "Get",
-    dataType: 'json',
-    //GET: "/location/d25euF",
-
-    //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-    //url: "http://requestb.in/1cacuu41",
-    url: brewDBAPI,
-
-    success: function(brews){
-        //var brewResponse =JSON.parse(brews);
-        //console.log(brews.data[4]);
-        console.log(brews);
-        console.log(brews.data[0].name);
-      //for(var i =0; i< drinks.length; i++){
-        debugger
-        //console.log(drinks[i]);
-        //console.log(brews[1][0])
-      },
-    
-    error: function ( jqXHR, textStatus, errorThrown ) {
-      console.log("something went wrong");
-      console.log(jqXHR);
-      console.log(textStatus);
-      console.log(errorThrown); 
-    }
-  }); //End of AJAX call
 
 
 /*
