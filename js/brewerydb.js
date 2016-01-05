@@ -9,17 +9,34 @@ var brewDBAPI;
 
     e.preventDefault();
 
-    alert("search button 1 works"); //Testing Search Now Button 
+    //alert("search button 1 works"); //Testing Search Now Button 
 
     beerName = $("#beerNameSearch1").val();
 
     console.log(beerName);  //Does the variable save the name? 
     
-    breweryDBurlAPI (beerName);         //Run the url function
+    breweryDBurlAPIbeersByName (beerName);         //Run the url function
 
     endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
   });
 
+
+
+//Search For Brewery 
+  $(".search3").on("click", function(e){
+
+    e.preventDefault();
+
+    alert("search button 3 works"); //Testing Search Now Button 
+
+    breweryName = $("#breweryNameSearch3").val();
+
+    console.log(breweryName);  //Does the variable save the name? 
+    
+    breweryDBurlAPIbreweriesByName (breweryName);         //Run the url function
+
+    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+  });
 
 
 
@@ -61,11 +78,22 @@ var brewDBAPI;
 //A Function To Run the Search based on the URL we specify
 
 
-  function breweryDBurlAPI (queryString) {
+  function breweryDBurlAPIbeersByName (queryString) {
 
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
     brewDBAPI += "search?q=" + queryString + "&type=beer";
+
+    brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
+    
+
+  };
+
+  function breweryDBurlAPIbreweriesByName (queryString) {
+
+    brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
+    
+    brewDBAPI += "search?q=" + queryString + "&type=brewery";
 
     brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     

@@ -22,6 +22,18 @@ footer{
     text-align: left;
 }
 
+form {
+    
+    text-align: center;
+}
+
+div > h5 {
+    
+    text-align: center;
+}
+
+
+
 body {
   background-color: #b71c1c;
   background-image: url("../pictures/flowers.png");
