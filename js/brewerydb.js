@@ -13,9 +13,12 @@ var brewDBAPI;
 
     beerName = $("#beerNameSearch1").val();
 
+    beerNameEncoded = encodeURIComponent(beerName);
+
     console.log(beerName);  //Does the variable save the name? 
+    console.log(beerNameEncoded);  //Does the variable save the encoded name? 
     
-    breweryDBurlAPIbeersByName (beerName);         //Run the url function
+    breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
 
     endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
   });
