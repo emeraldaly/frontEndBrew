@@ -41,6 +41,22 @@ var brewDBAPI;
     endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
   });
 
+  //Search For Brewery by Zip Code
+  $(".search5").on("click", function(e){
+
+    e.preventDefault();
+
+    alert("search button 5 works"); //Testing Search Now Button 
+
+    breweryZipCode = $("#breweryZipCodeSearch5").val();
+
+    console.log(breweryZipCode);  //Does the variable save the name? 
+    
+    breweryDBurlAPIbreweriesByZipCode (breweryZipCode);         //Run the url function
+
+    endpointBreweryDBzipCode (brewDBAPI);       //Run the AJAX call function
+  });
+
 
 
 
@@ -96,7 +112,19 @@ var brewDBAPI;
 
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
-    brewDBAPI += "search?q=" + queryString + "&type=brewery";
+    brewDBAPI += "search?q=" + queryString
+
+    brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
+    
+
+  };
+
+
+  function breweryDBurlAPIbreweriesByZipCode (queryString) {
+
+    brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
+    
+    brewDBAPI += "locations?postalCode=" + queryString
 
     brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     
@@ -131,6 +159,47 @@ var brewDBAPI;
           for (var i = 0; i < brews.data.length; i++){
             //debugger
             console.log(brews.data[i].name);
+          //console.log(drinks[i]);
+          //console.log(brews[1][0])
+          }
+      },
+      
+      error: function ( jqXHR, textStatus, errorThrown ) {
+        console.log("something went wrong");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown); 
+      }
+    }); //End of AJAX call
+
+  };
+
+  function endpointBreweryDBzipCode (APIurl){
+
+  //Call the Endpoint URL builder
+
+
+  //AJAX Call to access the endpoint
+    $.ajax({
+      type: "Get",
+      dataType: 'json',
+      //GET: "/location/d25euF",
+
+      //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+      //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
+      //url: "http://requestb.in/1cacuu41",
+      url: APIurl,
+
+      success: function(brews){
+          //var brewResponse =JSON.parse(brews);
+          //console.log(brews.data[4]);
+          console.log(brews);
+
+          //console.log(brews.data[0].name);
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].brewery.name);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
           }
