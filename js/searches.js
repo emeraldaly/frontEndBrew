@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var userSearch = "60 Minute IPA";
+  var userSearch = "Coors";
 
   var userSearchEncoded;
 
