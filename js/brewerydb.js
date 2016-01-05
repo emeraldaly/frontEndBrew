@@ -5,7 +5,9 @@ var breweryName;
 var beerLocationbyZipCode;
 var brewDBAPI;
 var beersByNames;
+var beersByNamesWithDescriptions;
 var breweriesByName;
+var breweriesByNameWithDescriptions;
 var breweriesByZipCode;
 var breweriesDescriptionsByZipCode;
 
@@ -25,7 +27,7 @@ var breweriesDescriptionsByZipCode;
     
     breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
 
-    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+    endpointBreweryDBbeersByName (brewDBAPI);       //Run the AJAX call function
   });
 
 
@@ -35,7 +37,7 @@ var breweriesDescriptionsByZipCode;
 
     e.preventDefault();
 
-    alert("search button 3 works"); //Testing Search Now Button 
+    //alert("search button 3 works"); //Testing Search Now Button 
 
     breweryName = $("#breweryNameSearch3").val();
 
@@ -43,7 +45,7 @@ var breweriesDescriptionsByZipCode;
     
     breweryDBurlAPIbreweriesByName (breweryName);         //Run the url function
 
-    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+    endpointBreweryDBbreweriesByName (brewDBAPI);       //Run the AJAX call function
   });
 
   //Search For Brewery by Zip Code
@@ -51,7 +53,7 @@ var breweriesDescriptionsByZipCode;
 
     e.preventDefault();
 
-    alert("search button 5 works"); //Testing Search Now Button 
+    //alert("search button 5 works"); //Testing Search Now Button 
 
     breweryZipCode = $("#breweryZipCodeSearch5").val();
 
@@ -133,12 +135,10 @@ var breweriesDescriptionsByZipCode;
 
     brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     
-
   };
 
 
-
-  function endpointBreweryDB (APIurl){
+  function endpointBreweryDBbeersByName (APIurl){
 
   //Call the Endpoint URL builder
 
@@ -164,8 +164,50 @@ var breweriesDescriptionsByZipCode;
           for (var i = 0; i < brews.data.length; i++){
             //debugger
             console.log(brews.data[i].name);
+            beersByNames = brews.data[i].name;
+            beersByNamesWithDescriptions = brews.data[i].description
+            console.log(beersByNames);
+            console.log(beersByNamesWithDescriptions);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
+          }
+      },
+      
+      error: function ( jqXHR, textStatus, errorThrown ) {
+        console.log("something went wrong");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown); 
+      }
+    }); //End of AJAX call
+
+  };
+
+  function endpointBreweryDBbreweriesByName (APIurl){
+
+  //Call the Endpoint URL builder
+
+
+  //AJAX Call to access the endpoint
+    $.ajax({
+      type: "Get",
+      dataType: 'json',
+      
+
+      success: function(brews){
+          
+          console.log(brews);
+
+          console.log(brews.data[0].name);
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].name);
+            breweriesByName = brews.data[i].name;
+            breweriesByNameWithDescriptions = brews.data[i].description;
+            console.log(breweriesByName);
+            console.log(breweriesByNameWithDescriptions);
+       
           }
       },
       
@@ -188,31 +230,23 @@ var breweriesDescriptionsByZipCode;
     $.ajax({
       type: "Get",
       dataType: 'json',
-      //GET: "/location/d25euF",
-
-      //url: "http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-      //url: "https:crossorigin.me/http://api.brewerydb.com/v2/?key=4d31671ed97df8dccb12177e18f94199",
-      //url: "http://requestb.in/1cacuu41",
-      url: APIurl,
+   
 
       success: function(brews){
-          //var brewResponse =JSON.parse(brews);
-          //console.log(brews.data[4]);
+        
           console.log(brews);
 
-          //console.log(brews.data[0].name);
+       
 
           for (var i = 0; i < brews.data.length; i++){
             //debugger
-            console.log(brews.data[i].brewery.name);
-            console.log(brews.data[i].brewery.description);
+            console.log(brews.data[i].brewery.name); //Accessing the AJAX object
+            console.log(brews.data[i].brewery.description); //Accessing the AJAX object
             breweriesByZipCode = brews.data[i].brewery.name;
             breweriesDescriptionsByZipCode = brews.data[i].brewery.description
-            console.log(breweriesByZipCode);
-            console.log(breweriesDescriptionsByZipCode);
+            console.log(breweriesByZipCode); //Checking variable stored
+            console.log(breweriesDescriptionsByZipCode); //Checking variable stored
 
-          //console.log(drinks[i]);
-          //console.log(brews[1][0])
           }
       },
       
