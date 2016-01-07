@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  @import(brewerydb.js)
+  $.getscript("js/brewerydb.js");
 
 //Function to Append the results from the API 
   for (var i = 0; i < window.brews.length; i++) {

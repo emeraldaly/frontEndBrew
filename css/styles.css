@@ -47,33 +47,6 @@ div > h5 {
     text-align: center;
 }
 
-
-#parallax-img {
-    width: 100%;
-}
-
-
-.section {
-    background-color: #ffffff;
-}
-
-.img-circle {
-  border-radius: 50%;
-  
-}
-
-.carousel-inner > .item > img{
-   width:100%;
-   height:300px;
-}
-
-
-#beerNameSearch1 {
-    text-align: center;
-    background-position: center;
-    position: center;
-}
-
 h3 {
  color: black;
  font-size: 50px;
@@ -83,7 +56,55 @@ h3 {
 h5{
   color: white;
   font-size:40px;
-  text-shadow: 2px 2px #000066;
+  text-shadow: 1px 1px #000066;
+}
+h5 p {
+    color: black;
+    text-shadow: 0px;
+}
+
+button {
+    text-align: center;
+}
+
+a {
+    text-align: center;
+}
+.thumbnail-section {
+    text-align: center
+}
+
+#parallax-img {
+    width: 100%;
+}
+
+
+.section {
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.img-circle {
+  border-radius: 50%;
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+.carousel-inner > .item > img{
+   width:100%;
+   height:300px;
+}
+
+.recommendations {
+    padding-left: 50px;
+    text-align: center;
+}
+
+#beerNameSearch1 {
+    text-align: center;
+    background-position: center;
+    position: center;
 }
 
 .row-search h5 {
@@ -92,7 +113,7 @@ h5{
 
 .row-search h6 {
     color: black;
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
 }
 
@@ -101,6 +122,9 @@ h5{
       height: 250px;
 }
 
+#section1-header {
+    text-align: center;
+}
 
 
 
