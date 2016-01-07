@@ -4,6 +4,13 @@ var beerName;
 var breweryName;
 var beerLocationbyZipCode;
 var brewDBAPI;
+var beersByNames;
+var beersByNamesWithDescriptions;
+var breweriesByName;
+var breweriesByNameWithDescriptions;
+var breweriesByZipCode;
+var breweriesDescriptionsByZipCode;
+
 
   $(".search1").on("click", function(e){
 
@@ -20,7 +27,7 @@ var brewDBAPI;
     
     breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
 
-    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+    endpointBreweryDBbeersByName (brewDBAPI);       //Run the AJAX call function
   });
 
 
@@ -30,7 +37,7 @@ var brewDBAPI;
 
     e.preventDefault();
 
-    alert("search button 3 works"); //Testing Search Now Button 
+    //alert("search button 3 works"); //Testing Search Now Button 
 
     breweryName = $("#breweryNameSearch3").val();
 
@@ -38,7 +45,23 @@ var brewDBAPI;
     
     breweryDBurlAPIbreweriesByName (breweryName);         //Run the url function
 
-    endpointBreweryDB (brewDBAPI);       //Run the AJAX call function
+    endpointBreweryDBbreweriesByName (brewDBAPI);       //Run the AJAX call function
+  });
+
+  //Search For Brewery by Zip Code
+  $(".search5").on("click", function(e){
+
+    e.preventDefault();
+
+    //alert("search button 5 works"); //Testing Search Now Button 
+
+    breweryZipCode = $("#breweryZipCodeSearch5").val();
+
+    console.log(breweryZipCode);  //Does the variable save the name? 
+    
+    breweryDBurlAPIbreweriesByZipCode (breweryZipCode);         //Run the url function
+
+    endpointBreweryDBzipCode (brewDBAPI);       //Run the AJAX call function
   });
 
 
@@ -96,7 +119,7 @@ var brewDBAPI;
 
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
-    brewDBAPI += "search?q=" + queryString + "&type=brewery";
+    brewDBAPI += "search?q=" + queryString
 
     brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
     
@@ -104,8 +127,18 @@ var brewDBAPI;
   };
 
 
+  function breweryDBurlAPIbreweriesByZipCode (queryString) {
 
-  function endpointBreweryDB (APIurl){
+    brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
+    
+    brewDBAPI += "locations?postalCode=" + queryString
+
+    brewDBAPI += "&key=4d31671ed97df8dccb12177e18f94199";
+    
+  };
+
+
+  function endpointBreweryDBbeersByName (APIurl){
 
   //Call the Endpoint URL builder
 
@@ -131,8 +164,89 @@ var brewDBAPI;
           for (var i = 0; i < brews.data.length; i++){
             //debugger
             console.log(brews.data[i].name);
+            beersByNames = brews.data[i].name;
+            beersByNamesWithDescriptions = brews.data[i].description
+            console.log(beersByNames);
+            console.log(beersByNamesWithDescriptions);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
+          }
+      },
+      
+      error: function ( jqXHR, textStatus, errorThrown ) {
+        console.log("something went wrong");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown); 
+      }
+    }); //End of AJAX call
+
+  };
+
+  function endpointBreweryDBbreweriesByName (APIurl){
+
+  //Call the Endpoint URL builder
+
+
+  //AJAX Call to access the endpoint
+    $.ajax({
+      type: "Get",
+      dataType: 'json',
+      
+
+      success: function(brews){
+          
+          console.log(brews);
+
+          console.log(brews.data[0].name);
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].name);
+            breweriesByName = brews.data[i].name;
+            breweriesByNameWithDescriptions = brews.data[i].description;
+            console.log(breweriesByName);
+            console.log(breweriesByNameWithDescriptions);
+       
+          }
+      },
+      
+      error: function ( jqXHR, textStatus, errorThrown ) {
+        console.log("something went wrong");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown); 
+      }
+    }); //End of AJAX call
+
+  };
+
+  function endpointBreweryDBzipCode (APIurl){
+
+  //Call the Endpoint URL builder
+
+
+  //AJAX Call to access the endpoint
+    $.ajax({
+      type: "Get",
+      dataType: 'json',
+   
+
+      success: function(brews){
+        
+          console.log(brews);
+
+       
+
+          for (var i = 0; i < brews.data.length; i++){
+            //debugger
+            console.log(brews.data[i].brewery.name); //Accessing the AJAX object
+            console.log(brews.data[i].brewery.description); //Accessing the AJAX object
+            breweriesByZipCode = brews.data[i].brewery.name;
+            breweriesDescriptionsByZipCode = brews.data[i].brewery.description
+            console.log(breweriesByZipCode); //Checking variable stored
+            console.log(breweriesDescriptionsByZipCode); //Checking variable stored
+
           }
       },
       
