@@ -33,7 +33,8 @@ footer{
     font-size: 16px ;
     font-family: verdana ;
     width: 100% ;
-    background-color: #EDDE95;  
+    background-color: #EDDE95;
+    position: absolute; 
 }
 
 
