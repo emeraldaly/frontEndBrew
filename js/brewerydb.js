@@ -29,6 +29,7 @@ $(document).ready(function(){
 
     e.preventDefault();
 
+    location.href = "search.html";
     //alert("search button 1 works"); //Testing Search Now Button 
 
     window.beerName = $("#beerNameSearch1").val();
@@ -41,6 +42,8 @@ $(document).ready(function(){
     breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
     console.log(brewDBAPI);
     endpointBreweryDBbeersByName (brewDBAPI);       //Run the AJAX call function
+
+    location.href = "search.html";  //Redirect to search.html Page
   });
 
 
@@ -181,12 +184,14 @@ $(document).ready(function(){
       url: APIurl,
 
       success: function(brews){
+          debuggers
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
           console.log(brews);
-          brewSearch1 = brews;
-          console.log(brewSearch1); // Saving the results objects
+          window.brewSearch1 = brews;
+          console.log(window.brewSearch1); // Saving the results objects
           console.log(brews.data[0].name);
+          console.log(window.brewSearch1.data[0].name);
 
           for (var i = 0; i < brews.data.length; i++){
             //debugger
