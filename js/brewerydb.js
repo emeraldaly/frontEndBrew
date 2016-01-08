@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     e.preventDefault();
 
-    location.href = "search.html";
+    
     //alert("search button 1 works"); //Testing Search Now Button 
 
     window.beerName = $("#beerNameSearch1").val();
