@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
 var beerName;
@@ -10,6 +11,7 @@ var breweriesByName;
 var breweriesByNameWithDescriptions;
 var breweriesByZipCode;
 var breweriesDescriptionsByZipCode;
+
 
 
   $(".search1").on("click", function(e){
