@@ -222,7 +222,7 @@ $(document).ready(function(){
       type: "Get",
       dataType: 'json',
       
-
+      url: APIurl,
       success: function(brews){
           
           console.log(brews);
@@ -265,7 +265,7 @@ $(document).ready(function(){
       type: "Get",
       dataType: 'json',
    
-
+      url: APIurl,
       success: function(brews){
         
           console.log(brews);
