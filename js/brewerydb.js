@@ -21,11 +21,11 @@ window.brewSearch1; //whole AJAX object
 window.brewSearch2; //whole AJAX object
 window.brewSearch3; //whole AJAX object
 
+var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
 
 
 $(document).ready(function(){
 
-  var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
 
   $(".search1").on("click", function(e){
 
@@ -38,17 +38,17 @@ $(document).ready(function(){
 
     beerNameEncoded = encodeURIComponent(window.beerName);
 
-    console.log(window.beerName);  //Does the variable save the name? 
-    console.log(beerNameEncoded);  //Does the variable save the encoded name? 
+    //console.log(window.beerName);  //Does the variable save the name? 
+    //console.log(beerNameEncoded);  //Does the variable save the encoded name? 
     
     breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
-    console.log(brewDBAPI);
+    //console.log(brewDBAPI);
 
-    debugger
+    //debugger
     endpointBreweryDBbeersByName(brewDBAPI);       //Run the AJAX call function
 
     //debugger
-    console.log(window.brewSearch1);
+    //console.log(window.brewSearch1);
 
     //Create and Set Cookie
     //Cookies.set('beerNameSearches', 'window.brewSearch1', { expires: 7 });
@@ -153,7 +153,7 @@ $(document).ready(function(){
   };
 
   function breweryDBurlAPIbreweriesByName (queryString) {
-    debugger
+    //debugger
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
     brewDBAPI += "search?q=" + queryString + "&type=brewery"
@@ -197,19 +197,19 @@ $(document).ready(function(){
       url: APIurl,
 
       success: function(brews){
-          debugger
+          //debugger
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
-          console.log(brews);
+          //console.log(brews);
           //debugger
           window.brewSearch1 = brews;
-          console.log(window.brewSearch1); // Saving the results objects
-          console.log(brews.data[0].name);
-          console.log(window.brewSearch1.data[0].name);
+          //console.log(window.brewSearch1); // Saving the results objects
+          //console.log(brews.data[0].name);
+          //console.log(window.brewSearch1.data[0].name);
 
           for (var i = 0; i < brews.data.length; i++) {
-            debugger
-            console.log(brews.data[i].name);
+            //debugger
+            //console.log(brews.data[i].name);
             window.beersByNames = brews.data[i].name;
             window.beersByNamesWithDescriptions = brews.data[i].description;
             console.log(window.beersByNames);

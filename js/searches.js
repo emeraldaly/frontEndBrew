@@ -4,7 +4,9 @@ $(document).ready(function(){
     
   //var message = snapshot.val();
 
-  alert("searches.js loads")
+  //alert("searches.js loads")
+  var myDataRef = Firebase('https://brewine-find.firebaseio.com/');
+
 
   myDataRef.on('child_added', function(snapshot) {
         var brewsFB = snapshot.val();
