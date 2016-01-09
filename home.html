@@ -65,7 +65,7 @@
                     
                     <div class="caption left-align">
                         <h3>Find your next great brew.</h3>
-                        <h5 class="light grey-text text-lighten-3">Find your next great brew.</h5>
+                        <h5 class="light grey-text text-lighten-3">Thousands of delicious beers from top notch micro breweries to famous brands.</h5>
                     </div>
                 </li>
                 <li>
@@ -73,7 +73,7 @@
                    
                     <div class="caption right-align">
                         <h3>Find your next Elegant Wine.</h3>
-                        <h5 class="light grey-text text-lighten-3">Find your next elegant wine.</h5>
+                        <h5 class="light grey-text text-lighten-3">Pair up from best wines around the world.</h5>
                     </div>
                 </li>
 
@@ -89,25 +89,28 @@
 
     <div class="container col m6 l12">
         <div class="section">
-            <h3>Your One Stop Search for Beer and Wine</h3>
+            <h3 id="section1-header">Your One Stop Search </h3>
+            <h3 id="section1-header">for Great Beers and Wines</h3>
+
             <p>There are well over 500 types of beers and wines. That is a lot of terrain to navigate. We're here to help you on your quest for new tastes and relaxing settings to spend time with your friends. Our aim is to cover all the details-- including getting you home safely-- so that you can optimize your down time.</p>
-            <p>Our customers both know what they want and love to learn about new options. On our site you can:
+            <p>Our customers both know what they want and love to learn about new options.</p>
+            <p>On our site you can:
                 <ol>
-                    <li>search by the Name of a Beer or Wine</li>
-                    <li>search by the Brewery or Winery</li>
-                    <li>search by a Zip Code</li>
+                    <li>Search by the Name of a Beer or Wine</li>
+                    <li>Search by the Brewery or Winery</li>
+                    <li>Search by a Zip Code</li>
                     OR
                     <li>If you're looking to mix it up, check out our recommended selections.</li>
                 </ol>
             </p>
             <div class="row">
-                <div class="col s6">
-                    <a href="file:///Users/alysonwright/Documents/Sites/frontEndBrewProject/wineselect.html">
+                <div class="col s12 m6 l6 recommendations">
+                    <a href="wineselect.html">
                         <button class="btn teal waves-effect waves-light search" type="submit" name="action">Recommended Wines</button>
                     </a>
                 </div>
-                <div class="col s6">
-                    <a href="file:///Users/alysonwright/Documents/Sites/frontEndBrewProject/beerselect.html">
+                <div class="col s12 m6 l6 recommendations">
+                    <a href="beerselect.html">
                         <button class="btn teal waves-effect waves-light search" type="submit" name="action">Recommended Beers</button>
                     </a>
                 </div>
@@ -124,10 +127,7 @@
 
         </div>
 
-      </div>   
-                
-    </div> <!-- section -->
-  </div><!-- end div container -->
+      </div>   <!-- end div container -->
 
         
   <div class="container"> 
@@ -152,9 +152,15 @@
                 <i class="material-icons">close</i>
 
               </div>
-              <button class="btn amber accent-3 waves-effect waves-light search1" type="submit" name="action">Beer by Name
+              
+                
+                
+                  <button class="btn amber accent-3 waves-effect waves-light search1" type="submit" name="action">Beer by Name
                   <i class="material-icons right">send</i>
-              </button>
+                </button>
+                
+             
+              
             </form>
           </div> <!-- end of section -->
         </div> <!-- end of row-search -->
@@ -180,14 +186,14 @@
         <div class="row-search">
          
           <div class="section">
-              <h6>Search for Beer by Zip Code</h6>
+              <h6>Search for Breweries by Zip Code</h6>
               <form>
                   <div class="input-field">
-                      <input id="search" type="search" required>
+                      <input id="breweryZipCodeSearch5" type="search" required>
                       <label for="search"><i class="material-icons">search</i></label>
                       <i class="material-icons">close</i>
                   </div>
-                  <button class="btn amber accent-3 waves-effect waves-light search" type="submit" name="action">Beer by Zip
+                  <button class="btn amber accent-3 waves-effect waves-light search5" type="submit" name="action">Beer by Zip
                       <i class="material-icons right">send</i>
                   </button>
               </form>
@@ -279,9 +285,9 @@
               <div class="thumbnail">
                 <img class="img-circle" src="http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg" alt="https://hereandnowresorts.files.wordpress.com/2014/07/7-28-14-now-sapphire_bar.jpg">
                 <div class="caption">
-                  <h3>Our beer selection:</h3>
+                  <h3>Check out our updated beer selection</h3>
                   <span class="glyphicon glyphicon-grain"></span>
-                  <a class="btn btn-primary btn large" href="beerselect.html" role="button">Beer</a>
+                  <a class="btn btn-primary btn large" href="beerselect.html" role="button">Our Choice Beers</a>
                 </div>
               </div>
             </div>
@@ -296,9 +302,10 @@
 
     <!-- Parallax-->
       <div class="parallax-container">
-        <div class="parallax"><img src="pictures/vineyard-grapes_web.jpg"></div>
+        <div class="parallax">
+          <img src="pictures/turpan_vineyard_web.jpg">
+        </div>
       </div>
-
     <!--end of parallax-->
 
  <!-- Third Section: Wine Panel -->
@@ -307,18 +314,21 @@
               
       </div>
       <div class="section">
-        <h3>Explore this month's selection of fine wines.</h3>
-        <p><strong>Explore this if you want to wine and dine or just have an elegantly grand time with your wine.</strong></p>
+        <h3>This month's selection of fine wines.</h3>
+        <h5>
+          <p><strong>Explore this if you want to wine and dine or just have an elegantly grand time with your wine.</strong></p>
+        </h5>
+        
         <div class="panel panel-default" div id="beerandwineselect">
           <div class="panel-heading text-center"></div>
             <div class="panel-body text-center" div id="bandwbody">
               <div class="inline">
-                <div class="thumbnail">
+                <div class="thumbnail thumbnail-section">
                   <img class="img-circle" src="https://pbs.twimg.com/media/CUi6ZUSUYAAaPFL.jpg" alt="https://img.grouponcdn.com/deal/pmo29mgTFHJ3cVA2BZTt/3J-960x582/v1/c700x420.jpg">
                   <div class="caption">
-                    <h3>Our wine selection:</h3>
+                    <h3>Check Out Our Updated Wine Selection</h3>
                     <span class="glyphicon glyphicon-glass"></span>
-                    <a class="btn btn-primary btn large" href="wineselect.html" role="button">Wine</a>
+                    <a class="btn btn-primary btn large" href="wineselect.html" role="button">Our Choice Wines</a>
                   </div>
                 </div>
               </div>
@@ -357,6 +367,8 @@
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
 
     <!-- Compiled and minified JavaScript - Materialize-->
+    <script type="text/javascript" src="js-cookie-master/src/js.cookie.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -366,14 +378,16 @@
     <script type="text/javascript" src="js/parallax.js"></script>
 
     <script type="text/javascript" src="js/homepage.js"></script>
-
+<!--
     <script type="text/javascript" src="js/searches.js"></script>
-
-    
-
+-->
     <script type="text/javascript" src="js/brewerydb.js"></script>
-    
+<!--
+    <script type="text/javascript" src="js/searches.js"></script>
+-->
     <script type="text/javascript" src="js/wine_com_API.js"></script>
+
+    
 
 
 </body>
