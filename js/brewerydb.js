@@ -5,25 +5,27 @@ window.breweryName; //search2
 
 window.breweryLocationbyZipCode; //search3
 
-window.brewDBAPI;
+window.brewDBAPI; //URL for breweryDB Endpoint
 
 
-window.beersByNames; //search 1
-window.beersByNamesWithDescriptions; //search 1
+window.beersByNames; //search 1 AJAX object
+window.beersByNamesWithDescriptions; //search 1 AJAX object
 
-window.breweriesByName;   //search2
-window.breweriesByNameWithDescriptions;   //search2
+window.breweriesByName;                   //search2 AJAX object
+window.breweriesByNameWithDescriptions;   //search2 AJAX object
 
-window.breweriesByZipCode;    //search3
-window.breweriesDescriptionsByZipCode;    //search3
+window.breweriesByZipCode;                //search3 AJAX object
+window.breweriesDescriptionsByZipCode;    //search3 AJAX object
 
-window.brewSearch1;
-window.brewSearch2;
-window.brewSearch3;
+window.brewSearch1; //whole AJAX object
+window.brewSearch2; //whole AJAX object
+window.brewSearch3; //whole AJAX object
+
+
 
 $(document).ready(function(){
 
-
+  var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
 
   $(".search1").on("click", function(e){
 
@@ -41,7 +43,17 @@ $(document).ready(function(){
     
     breweryDBurlAPIbeersByName (beerNameEncoded);         //Run the url function
     console.log(brewDBAPI);
-    endpointBreweryDBbeersByName (brewDBAPI);       //Run the AJAX call function
+
+    debugger
+    endpointBreweryDBbeersByName(brewDBAPI);       //Run the AJAX call function
+
+    //debugger
+    console.log(window.brewSearch1);
+
+    //Create and Set Cookie
+    //Cookies.set('beerNameSearches', 'window.brewSearch1', { expires: 7 });
+
+
 
     location.href = "search.html";  //Redirect to search.html Page
   });
@@ -86,7 +98,7 @@ $(document).ready(function(){
     breweryDBurlAPIbreweriesByZipCode (breweryLocationbyZipCodeEncoded);         //Run the url function
 
     endpointBreweryDBzipCode (brewDBAPI);       //Run the AJAX call function
-    console.log( brewDBAPI);
+    //console.log( brewDBAPI);
   });
 
 
@@ -175,6 +187,7 @@ $(document).ready(function(){
   //AJAX Call to access the endpoint
     $.ajax({
       type: "Get",
+
       dataType: 'json',
       //GET: "/location/d25euF",
 
@@ -184,24 +197,39 @@ $(document).ready(function(){
       url: APIurl,
 
       success: function(brews){
-          debuggers
+          debugger
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
           console.log(brews);
+          //debugger
           window.brewSearch1 = brews;
           console.log(window.brewSearch1); // Saving the results objects
           console.log(brews.data[0].name);
           console.log(window.brewSearch1.data[0].name);
 
-          for (var i = 0; i < brews.data.length; i++){
-            //debugger
+          for (var i = 0; i < brews.data.length; i++) {
+            debugger
             console.log(brews.data[i].name);
             window.beersByNames = brews.data[i].name;
-            window.beersByNamesWithDescriptions = brews.data[i].description
+            window.beersByNamesWithDescriptions = brews.data[i].description;
             console.log(window.beersByNames);
             console.log(window.beersByNamesWithDescriptions);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
+
+          //Create and Set Cookie
+          //Cookies.set('beerNameSearches', 'window.brewSearch1', { expires: 7 });
+
+          //Store to Firebase
+          //myDataRef.set(window.beersByNames);  //Store names in Firebase
+          //myDataRef.set(window.beersByNamesWithDescriptions);  //Store names in Firebase
+
+            myDataRef.push().set({
+              beer_name: brews.data[i].name, 
+              beer_description: brews.data[i].description
+            }); //Store Objects
+            //myDataRef.push({name: "beersByNamesWithDescriptions_FB", });
+
           }
       },
       
@@ -243,6 +271,13 @@ $(document).ready(function(){
             breweriesByNameWithDescriptions = brews.data[i].description;
             console.log(breweriesByName);
             console.log(breweriesByNameWithDescriptions);
+
+
+            myDataRef.push().set({
+              brewery_name: brews.data[i].name, 
+              brewery_description: brews.data[i].description
+            }); //Store Objects
+            
        
           }
       },

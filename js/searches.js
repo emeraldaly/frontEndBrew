@@ -1,11 +1,21 @@
-$(document).ready(function(){
+//Cookies.get(); 
 
-  
+$(document).ready(function(){
+    
+  //var message = snapshot.val();
 
   alert("searches.js loads")
+
+  myDataRef.on('child_added', function(snapshot) {
+        var brewsFB = snapshot.val();
+        console.log(brewsFB);
+  });
+  
+
   beerResults();
 
   function beerResults(){     //Function to Append the results from the API 
+    console.log(window.brewSearch1);
 
     $("tbody").empty();     // Empty the results of the table 
 
