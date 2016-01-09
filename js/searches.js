@@ -1,29 +1,44 @@
+//Cookies.get(); 
+
 $(document).ready(function(){
+    
+  //var message = snapshot.val();
 
-  $.getscript("js/brewerydb.js");
+  alert("searches.js loads")
 
-//Function to Append the results from the API 
-  for (var i = 0; i < window.brews.length; i++) {
-    var brewRow = brewBuild(window.brews[i]);
-    console.log(brewCol);
-    $(".search panel").append(brewCol)
-  };
+  myDataRef.on('child_added', function(snapshot) {
+        var brewsFB = snapshot.val();
+        console.log(brewsFB);
+  });
+  
 
-  function brewListBuild(brewResults) {
-    var brewColDiv = $("<div>").addClass("col-md-4");
-    var brewNameDiv = $("<div>").addClass("name");
-    var brewDescriptionDiv = $("<div>").addClass("description");
-    var brewNames = $("<img>").attr("src",  brewResults.data.images.medium)
-    var brewName;
-    var brewLocation;
-    //var  blah blah;
+  beerResults();
 
-    console.log(brewPic);
-    console.log(brewColDiv);
-    colDiv.append(brewNameDiv);
-    colDiv.append(brewDescriptionDiv)
+  function beerResults(){     //Function to Append the results from the API 
+    console.log(window.brewSearch1);
 
-    return colDiv;
-  }; //end of function
+    $("tbody").empty();     // Empty the results of the table 
+
+     //for (var i = 0; i < window.brewSearch1.length; i++) {
+    //   var brewRow = brewBuildRow();
+    //   console.log(brewRow);
+    //   $(".search-results-table").append(brewCol)
+    // };
+  }
+    
+    
+
+
+  function brewByNamesBuildRow () {
+        
+    var nameTD = $("<td>").append(window.beersByNames);
+    var descriptionTD = $("<td>").append((window.beersByNamesWithDescriptions));
+    var newRow = ("<tr>");
+
+    return $(newRow).append(nameTD) // Adding each cell with correct information from object
+          .append(descriptionTD)
+      
+    };
+   //end of function
 
 });
