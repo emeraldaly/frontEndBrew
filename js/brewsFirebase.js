@@ -4,5 +4,5 @@ $(document).ready(function(){
 
 
 
-  myDataRef.set('User ' + name + ' says ' + text);
+  //myDataRef.set('User ' + name + ' says ' + text);
 });
