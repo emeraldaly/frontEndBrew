@@ -1,32 +1,39 @@
-(function (jQuery, Firebase, Path) {
-    "use strict";
+$(Document).ready(function() {
 
     // the main firebase reference
-    var rootRef = new Firebase('https://docs-sandbox.firebaseio.com/web/uauth');
-
+    'use strict' ; var Ref = new Firebase("https://shining-fire-5762.firebaseio.com");
+    var authClient = new FirebaseSimpleLogin (ref,function(error,user) {
+        if (error == null) {
+            console.log("Error authenticating:", error);
+        } else if (user == null) {
+            console.log("User is logged in", user);
+        } else {
+            console.log("User is logged out");
+        }
+    });            
     // pair our routes to our form elements and controller
     var routeMap = {
         '#/': {
             form: 'frmLogin',
-            controller: 'login'
-        },
+            controller: 'login',
+    var : {
             '#/logout': {
             form: 'frmLogout',
-            controller: 'logout'
-        },
+            controller: 'logout',
+    var routeMap = {
             '#/register': {
             form: 'frmRegister',
-            controller: 'register'
+            controller: 'register',
         },
-            '#/profile': {
+    var routeMap = { '#/profile': {
             form: 'frmProfile',
             controller: 'profile',
             authRequired: true // must be logged in to get here
         },
-    };
+        // create the object to store our controllers
+    var object 
+    var controllers = $('login','logout','register','profile');
 
-    // create the object to store our controllers
-    var controllers = {};
 
     // store the active form shown on the page
     var activeForm = null;
@@ -37,9 +44,15 @@
         window.location.href = '#/' + route;
     }
 
+    //log a user in using facebook authentication with the public profile
+    //and friends permissions
+    auth.login("Facebook", {
+        scope: "public_profile, user_friends"
+    });
+
     // Handle third party login providers
     // returns a promise
-    function thirdPartyLogin(provider) {
+    function thirdPartyLogin(Facebook) {
         var deferred = $.Deferred();
 
         rootRef.authWithOAuthPopup(provider, function (err, user) {
@@ -55,13 +68,20 @@
         return deferred.promise();
     };
 
+    // Log a user in using email/password authentication
+    auth.login("password", {
+        email: "me@here.com",
+        password: "mypassword",
+        rememberMe: true
+    });
+
     // Handle Email/Password login
     // returns a promise
-    function authWithPassword(userObject) {
+    function authWithPassword(userObj) {
         var deferred = $.Deferred();
-        console.log(userObject);
-        rootRef.authWithPassword(userObject, function onAuth(error, user) {
-            if (error) {
+        console.log(userObj);
+        rootRef.authWithPassword(userObj, function onAuth(err, user) {
+            if (err) {
                 deferred.reject(err);
             }
 
@@ -76,9 +96,9 @@
 
     // create a user but not login
     // returns a promsie
-    function createUser(userObject) {
+    function createUser(userObj) {
         var deferred = $.Deferred();
-        rootRef.createUser(userObject, function (error) {
+        rootRef.createUser(userObj, function (err) {
 
             if (!err) {
                 deferred.resolve();
@@ -91,35 +111,26 @@
         return deferred.promise();
     }
 
-    // Create a user and then log in
+    // Create a user and then login
     // returns a promise
-    function createUserAndLogin(userObject) {
-        return createUser(userObject)
+    function createUserAndLogin(userObj) {
+        return createUser(userObj)
             .then(function () {
             return authWithPassword(userObj);
         });
     }
 
-    // authenticate anonymously
-    // returns a promise
-    function authAnonymously() {
-        var deferred = $.Deferred();
-        rootRef.authAnonymously(function (err, authData) {
-
-            if (authData) {
-                deferred.resolve(authData);
+    //create user
+    auth.createUser (email, password
+        function(error, user) {
+            if (error === null) {
+                console.log("User created successfully:", user);
+            } else {
+              console.log("Error creating user:", error);
             }
+        });          
 
-            if (err) {
-                deferred.reject(err);
-            }
-
-        });
-
-        return deferred.promise();
-    }
-
-    // route to the specified route if sucessful
+    // route to the specified route if successful
     // if there is an error, show the alert
     function handleAuthResponse(promise, route) {
         $.when(promise)
@@ -150,11 +161,46 @@
         alertBox.children('#alert-title').text(title);
         alertBox.children('#alert-detail').text(detail);
     }
+    //changePassword (email, oldPassword, newPassword, [callback])
+    auth.changePassword(email, oldPassword, newPassword,
+        function(error) {
+            if (error === null) {
+                console.log("Password changed successfully");
+        }   else {
+                console.log("Error changing password:", error);
+        }
+    }):
+
+    //send Password Reset Email (email, [callback]) 
+    auth.sendPasswordResetEmail
+    (email, function(error) {
+       if (error === null) {
+       console.log("Password reset email sent successfully");
+    }  else {
+       console.log("Error sending password reset email:", error);
+    }
+    });
+
+    //removeUser (email, password, [callback]) 
+    //deletes the email, password user account specified
+    auth.removeUser(email, password,
+    function(error) {
+    if (error === null) {
+       console.log("User removed successfully");
+    }  else {
+       console.log("Error removing user:", error);
+    }
+    });
+
+    //logout
+    //logs a user out
+    auth.logout();                       
+
 
     /// Controllers
     ////////////////////////////////////////
 
-    controllers.login = function (form) {
+    controllers.login = function(form) {
 
         // Form submission for logging in
         form.on('submit', function (e) {
@@ -297,7 +343,7 @@
 
     /// Routes
     ///  #/         - Login
-    //   #/logout   - Logut
+    //   #/logout   - Logout
     //   #/register - Register
     //   #/profile  - Profile
 
@@ -311,7 +357,7 @@
     /// Initialize
     ////////////////////////////////////////
 
-    $(function () {
+    $(function() {
 
         // Start the router
         Path.listen();
@@ -338,3 +384,4 @@
     });
 
 }(window.jQuery, window.Firebase, window.Path))
+
