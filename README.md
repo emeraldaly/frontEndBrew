@@ -1,7 +1,7 @@
 # frontEndBrew
 
 # My Frontend Project: frontEndBrew
-* Team Members:
+Team Members:
 * Mark Awai
 * Marco Sebello
 * Carolyn Tevnan
