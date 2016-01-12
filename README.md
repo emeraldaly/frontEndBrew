@@ -1,11 +1,11 @@
 # frontEndBrew
 
 # My Frontend Project: frontEndBrew
-Team Members:
-Mark Awai
-Marco Sebalo
-Carolyn Tevnan
-Alyson Wright
+*Team Members:
+*Mark Awai
+*Marco Sebello
+*Carolyn Tevnan
+*Alyson Wright
 
 ## General Project Summary:
 
