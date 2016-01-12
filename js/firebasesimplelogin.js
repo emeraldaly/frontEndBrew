@@ -1,8 +1,8 @@
-$(Document).ready(function() {
+$(document).ready(function() {
 //return value is FirebaseSimpleLogin - an object that can be used to manage the users login state
-var ref = new Firebase
-("https://<shining-fire-5762.firebaseio.com");
-var authClient = new FirebaseSimpleLogin(ref, function(error, user)) {
+var ref = new Firebase("https://<shining-fire-5762.firebaseio.com");
+var FirebaseSimpleLogin;
+var authClient = new FirebaseSimpleLogin(ref,(error, user))
   if (error !== null) {
     console.log("error authenticating:",error);
   } else if (user !== null) {
@@ -67,4 +67,5 @@ auth.removeUser(email, password, function(error) {
   } else {
     console.log("Error removing user:", error);
   }
-})                         
+});
+;                         
