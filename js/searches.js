@@ -50,8 +50,10 @@ $(document).ready(function(){
 
     var nameTD = $("<td>").append(rowData.beer_name); //append beer_name key from Firebase object
     console.log(nameTD);
+    
     var descriptionTD = $("<td>").append(rowData.beer_description); //append beer_description key from Firebase object
     console.log(nameTD);
+    
     var newRow = ("<tr>");
     console.log(newRow);
 
