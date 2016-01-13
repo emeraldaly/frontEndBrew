@@ -1,44 +1,63 @@
 //Cookies.get(); 
 
+
 $(document).ready(function(){
+
+
+  $("tbody").empty();
+
+  var brewsArray = [];
+
+  var myDataRef =  new Firebase ('https://brewine-find.firebaseio.com/');
+
+  myDataRef.on('child_added', function(snapshot) {  //intro
+    var brewsFB = snapshot.val(); //was coming up as undefined
+                                      //return a data object from Firebase
+    //debugger
+    //brewsArray.push(brewsFB);
     
-  //var message = snapshot.val();
+    console.log(brewsFB);     //checking data from Firebase
+    //console.log(brewsArray);  //checking array of objects        
+    
+    //beerResults(brewsArray)
 
-  //alert("searches.js loads")
-  var myDataRef = Firebase('https://brewine-find.firebaseio.com/');
+    brewByNamesBuildRow(brewsFB);
 
-
-  myDataRef.on('child_added', function(snapshot) {
-        var brewsFB = snapshot.val();
-        console.log(brewsFB);
   });
   
+  //debugger;
+   //After completing array of objects, run build functions
 
-  beerResults();
+  // function beerResults(beerData) {     //Function to Append the results from the API 
+  //   console.log(beerData); // making sure that array passes through
 
-  function beerResults(){     //Function to Append the results from the API 
-    console.log(window.brewSearch1);
+  //   $("tbody").empty();     // Empty the results of the table 
+   
+  //  debugger;
+  //   for (var i = 0; i < beerData.length; i++) {
 
-    $("tbody").empty();     // Empty the results of the table 
-
-     //for (var i = 0; i < window.brewSearch1.length; i++) {
-    //   var brewRow = brewBuildRow();
-    //   console.log(brewRow);
-    //   $(".search-results-table").append(brewCol)
-    // };
-  }
+  //     brewByNamesBuildRow(beerData[i]);
+  //   }; //rub through brews array
     
+      
+    
+  // }
     
 
+  function brewByNamesBuildRow (rowData) {
+    //debugger
+    console.log(rowData); //checking for beer name array element passing
 
-  function brewByNamesBuildRow () {
-        
-    var nameTD = $("<td>").append(window.beersByNames);
-    var descriptionTD = $("<td>").append((window.beersByNamesWithDescriptions));
+    var nameTD = $("<td>").append(rowData.beer_name); //append beer_name key from Firebase object
+    console.log(nameTD);
+    var descriptionTD = $("<td>").append(rowData.beer_description); //append beer_description key from Firebase object
+    console.log(nameTD);
     var newRow = ("<tr>");
+    console.log(newRow);
 
-    return $(newRow).append(nameTD) // Adding each cell with correct information from object
-          .append(descriptionTD)
+    return $("tbody").append(newRow)
+          .append(nameTD) // Adding each cell with correct information from object
+          .append(descriptionTD);
       
     };
    //end of function

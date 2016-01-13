@@ -21,6 +21,7 @@ window.brewSearch1; //whole AJAX object
 window.brewSearch2; //whole AJAX object
 window.brewSearch3; //whole AJAX object
 
+
 var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
 
 
@@ -143,6 +144,7 @@ $(document).ready(function(){
 
   function breweryDBurlAPIbeersByName (queryString) {
 
+
     brewDBAPI = "https:crossorigin.me/http://api.brewerydb.com/v2/";
     
     brewDBAPI += "search?q=" + queryString + "&type=beer";
@@ -208,11 +210,18 @@ $(document).ready(function(){
           //console.log(window.brewSearch1.data[0].name);
 
           for (var i = 0; i < brews.data.length; i++) {
-            //debugger
-            //console.log(brews.data[i].name);
+            
+            console.log(brews.data[i].name);
             window.beersByNames = brews.data[i].name;
             window.beersByNamesWithDescriptions = brews.data[i].description;
             console.log(window.beersByNames);
+            console.log(window.beersByNamesWithDescriptions);
+            
+
+            if (brews.data[i].description === undefined) {
+              window.beersByNamesWithDescriptions = brews.data[i].style.description;
+            }
+
             console.log(window.beersByNamesWithDescriptions);
           //console.log(drinks[i]);
           //console.log(brews[1][0])
@@ -224,9 +233,12 @@ $(document).ready(function(){
           //myDataRef.set(window.beersByNames);  //Store names in Firebase
           //myDataRef.set(window.beersByNamesWithDescriptions);  //Store names in Firebase
 
+          //debugger;
             myDataRef.push().set({
-              beer_name: brews.data[i].name, 
-              beer_description: brews.data[i].description
+              
+              beer_name: brews.data[i].name,
+
+              beer_description: window.beersByNamesWithDescriptions
             }); //Store Objects
             //myDataRef.push({name: "beersByNamesWithDescriptions_FB", });
 
@@ -299,7 +311,6 @@ $(document).ready(function(){
 
   //Call the Endpoint URL builder
 
-
   //AJAX Call to access the endpoint
     $.ajax({
       type: "Get",
@@ -333,35 +344,7 @@ $(document).ready(function(){
       }
     }); //End of AJAX call
 
-  };
-
-
-
-
-/*
-//Function to Append the results from the API 
-  for (var i = 0; i < window.brews.length; i++) {
-    var brewRow = brewBuild(window.brews[i]);
-    console.log(brewCol);
-    $(".search panel").append(tweetCol)
-  };
-*/
-  function brewBuild(brewResults) {
-    var brewColDiv = $("<div>").addClass("col-md-4");
-    var brewPictureDiv = $("<div>").addClass("picture");
-    var brewPic = $("<img>").attr("src",  brewResults.data.images.medium)
-    var brewName;
-    var brewLocation;
-    //var  blah blah;
-
-    console.log(brewPic);
-    console.log(brewColDiv);
-    colDiv.append(brewPic);
-
-    return colDiv;
   }; //end of function
-
-//API Key:  4d31671ed97df8dccb12177e18f94199
 
 
 

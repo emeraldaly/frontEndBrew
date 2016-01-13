@@ -1,4 +1,4 @@
-$(Document).ready(function() {
+$(document).ready(function() {
 
     // the main firebase reference
     'use strict' ; var Ref = new Firebase("https://shining-fire-5762.firebaseio.com");
