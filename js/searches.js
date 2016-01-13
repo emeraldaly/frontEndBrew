@@ -37,10 +37,7 @@ $(document).ready(function(){
   //   for (var i = 0; i < beerData.length; i++) {
 
   //     brewByNamesBuildRow(beerData[i]);
-  //   }; //rub through brews array
-    
-      
-    
+  //   }; //rub through brews array      
   // }
     
 
