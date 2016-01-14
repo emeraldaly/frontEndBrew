@@ -1,8 +1,9 @@
-$(Document).ready(function() {
+$(document).ready(function() {
 
     // the main firebase reference
     'use strict' ; var Ref = new Firebase("https://shining-fire-5762.firebaseio.com");
-    var authClient = new FirebaseSimpleLogin (ref,function(error,user) {
+    var FirebaseSimpleLogin;
+    var authClient = new FirebaseSimpleLogin(Ref,(error,user))
         if (error == null) {
             console.log("Error authenticating:", error);
         } else if (user == null) {
@@ -15,25 +16,24 @@ $(Document).ready(function() {
     var routeMap = {
         '#/': {
             form: 'frmLogin',
-            controller: 'login',
-    var : {
+            controller: 'login'},
+    
             '#/logout': {
             form: 'frmLogout',
-            controller: 'logout',
-    var routeMap = {
+            controller: 'logout'},
+    
             '#/register': {
             form: 'frmRegister',
-            controller: 'register',
-        },
-    var routeMap = { '#/profile': {
-            form: 'frmProfile',
-            controller: 'profile',
-            authRequired: true // must be logged in to get here
-        },
+            controller: 'register'},
+        
+            '#/profile': {
+                form: 'frmProfile',
+                controller: 'profile',
+                authRequired: true // must be logged in to get here
+            }
+    }
         // create the object to store our controllers
-    var object 
-    var controllers = $('login','logout','register','profile');
-
+    var controllers = {};
 
     // store the active form shown on the page
     var activeForm = null;
@@ -43,12 +43,6 @@ $(Document).ready(function() {
     function routeTo(route) {
         window.location.href = '#/' + route;
     }
-
-    //log a user in using facebook authentication with the public profile
-    //and friends permissions
-    auth.login("Facebook", {
-        scope: "public_profile, user_friends"
-    });
 
     // Handle third party login providers
     // returns a promise
@@ -67,13 +61,6 @@ $(Document).ready(function() {
 
         return deferred.promise();
     };
-
-    // Log a user in using email/password authentication
-    auth.login("password", {
-        email: "me@here.com",
-        password: "mypassword",
-        rememberMe: true
-    });
 
     // Handle Email/Password login
     // returns a promise
@@ -121,7 +108,7 @@ $(Document).ready(function() {
     }
 
     //create user
-    auth.createUser (email, password
+    auth.createUser (email, password,
         function(error, user) {
             if (error === null) {
                 console.log("User created successfully:", user);
@@ -169,7 +156,7 @@ $(Document).ready(function() {
         }   else {
                 console.log("Error changing password:", error);
         }
-    }):
+    });
 
     //send Password Reset Email (email, [callback]) 
     auth.sendPasswordResetEmail
@@ -383,5 +370,5 @@ $(Document).ready(function() {
 
     });
 
-}(window.jQuery, window.Firebase, window.Path))
+(window.jQuery, window.Firebase, window.Path)
 
