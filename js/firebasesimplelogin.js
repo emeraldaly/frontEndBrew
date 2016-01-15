@@ -1,8 +1,9 @@
 $(document).ready(function() {
 //return value is FirebaseSimpleLogin - an object that can be used to manage the users login state
-'use strict' ; var ref = new Firebase("https://<shining-fire-5762.firebaseio.com");
+var usersRef = new Firebase("https://<shining-fire-5762.firebaseio.com");
 var FirebaseSimpleLogin;
-var authClient = new FirebaseSimpleLogin(ref, function(error, user) {
+var authClient;
+new Firebase(usersRef, function(error, user) {
   if (error !== null){
     console.log("error authenticating:",error);
   }
@@ -211,7 +212,7 @@ auth.sendPasswordResetEmail(email, function(error) {
 
     /// Controllers
     ////////////////////////////////////////
-
+    var controllers
     controllers.login = function(form) {
 
         // Form submission for logging in
@@ -576,145 +577,145 @@ auth.sendPasswordResetEmail(email, function(error) {
     /// Controllers
     ////////////////////////////////////////
 
-    controllers.login = function(form) {
+//    controllers.login = function(form) {
 
         // Form submission for logging in
-        form.on('submit', function (e) {
+//        form.on('submit', function (e) {
 
-            var userAndPass = $(this).serializeObject();
-            var loginPromise = authWithPassword(userAndPass);
-            e.preventDefault();
+//            var userAndPass = $(this).serializeObject();
+//            var loginPromise = authWithPassword(userAndPass);
+//            e.preventDefault();
 
-            handleAuthResponse(loginPromise, 'profile');
+//            handleAuthResponse(loginPromise, 'profile');
 
-        });
+//        });
 
         // Social buttons
-        form.children('.bt-social').on('click', function (e) {
+//        form.children('.bt-social').on('click', function (e) {
 
-            var $currentButton = $(this);
-            var provider = $currentButton.data('provider');
-            var socialLoginPromise;
-            e.preventDefault();
+//            var $currentButton = $(this);
+//            var provider = $currentButton.data('provider');
+//            var socialLoginPromise;
+//            e.preventDefault();
 
-            socialLoginPromise = thirdPartyLogin(provider);
-            handleAuthResponse(socialLoginPromise, 'profile');
+//            socialLoginPromise = thirdPartyLogin(provider);
+//            handleAuthResponse(socialLoginPromise, 'profile');
 
-        });
+//        });
 
-        form.children('#btAnon').on('click', function (e) {
-            e.preventDefault();
-            handleAuthResponse(authAnonymously(), 'profilex');
-        });
+//        form.children('#btAnon').on('click', function (e) {
+//            e.preventDefault();
+//            handleAuthResponse(authAnonymously(), 'profilex');
+//        });
 
-    };
+//    };
 
     // logout immediately when the controller is invoked
-    controllers.logout = function (form) {
-        rootRef.unauth();
-    };
+//    controllers.logout = function (form) {
+//        rootRef.unauth();
+//    };
 
-    controllers.register = function (form) {
+//    controllers.register = function (form) {
 
         // Form submission for registering
-        form.on('submit', function (e) {
+//        form.on('submit', function (e) {
 
-            var userAndPass = $(this).serializeObject();
-            var loginPromise = createUserAndLogin(userAndPass);
-            e.preventDefault();
+//            var userAndPass = $(this).serializeObject();
+//            var loginPromise = createUserAndLogin(userAndPass);
+//            e.preventDefault();
 
-            handleAuthResponse(loginPromise, 'profile');
+//            handleAuthResponse(loginPromise, 'profile');
 
-        });
+//        });
 
-    };
+//    };
 
-    controllers.profile = function (form) {
+//    controllers.profile = function (form) {
         // Check the current user
-        var user = rootRef.getAuth();
-        var userRef;
+//        var user = rootRef.getAuth();
+//        var userRef;
 
         // If no current user send to register page
-        if (!user) {
-            routeTo('register');
-            return;
-        }
+//        if (!user) {
+//            routeTo('register');
+//            return;
+//        }
 
         // Load user info
-        userRef = rootRef.child('users').child(user.uid);
-        userRef.once('value', function (snap) {
-            var user = snap.val();
-            if (!user) {
-                return;
-            }
+//        userRef = rootRef.child('users').child(user.uid);
+//        userRef.once('value', function (snap) {
+//            var user = snap.val();
+//            if (!user) {
+//                return;
+//            }
 
             // set the fields
-            form.find('#txtName').val(user.name);
-            form.find('#ddlDino').val(user.favoriteDinosaur);
-        });
+//            form.find('#txtName').val(user.name);
+//            form.find('#ddlDino').val(user.favoriteDinosaur);
+//        });
 
         // Save user's info to Firebase
-        form.on('submit', function (e) {
-            e.preventDefault();
-            var userInfo = $(this).serializeObject();
+//        form.on('submit', function (e) {
+//            e.preventDefault();
+//            var userInfo = $(this).serializeObject();
 
-            userRef.set(userInfo, function onComplete() {
+//            userRef.set(userInfo, function onComplete() {
 
                 // show the message if write is successful
-                showAlert({
-                    title: 'Successfully saved!',
-                    detail: 'You are still logged in',
-                    className: 'alert-success'
-                });
+//                showAlert({
+//                    title: 'Successfully saved!',
+//                    detail: 'You are still logged in',
+//                    className: 'alert-success'
+//                });
 
-            });
-        });
+//            });
+//        });
 
-    };
+//    };
 
     /// Routing
     ////////////////////////////////////////
 
     // Handle transitions between routes
-    function transitionRoute(path) {
+//    function transitionRoute(path) {
         // grab the config object to get the form element and controller
-        var formRoute = routeMap[path];
-        var currentUser = rootRef.getAuth();
+//        var formRoute = routeMap[path];
+//        var currentUser = rootRef.getAuth();
 
         // if authentication is required and there is no
         // current user then go to the register page and
         // stop executing
-        if (formRoute.authRequired && !currentUser) {
-            routeTo('register');
-            return;
-        }
+//        if (formRoute.authRequired && !currentUser) {
+//            routeTo('register');
+//            return;
+//        }
 
         // wrap the upcoming form in jQuery
-        var upcomingForm = $('#' + formRoute.form);
+//        var upcomingForm = $('#' + formRoute.form);
 
         // if there is no active form then make the current one active
-        if (!activeForm) {
-            activeForm = upcomingForm;
-        }
+//        if (!activeForm) {
+//            activeForm = upcomingForm;
+//        }
 
         // hide old form and show new form
-        activeForm.hide();
-        upcomingForm.show().hide().fadeIn(750);
+//        activeForm.hide();
+//        upcomingForm.show().hide().fadeIn(750);
 
         // remove any listeners on the soon to be switched form
-        activeForm.off();
+//        activeForm.off();
 
         // set the new form as the active form
-        activeForm = upcomingForm;
+//        activeForm = upcomingForm;
 
         // invoke the controller
-        controllers[formRoute.controller](activeForm);
-    }
+//        controllers[formRoute.controller](activeForm);
+//    }
 
     // Set up the transitioning of the route
-    function prepRoute() {
-        transitionRoute(this.path);
-    }
+//    function prepRoute() {
+//        transitionRoute(this.path);
+//    }
 
 
     /// Routes
@@ -723,42 +724,42 @@ auth.sendPasswordResetEmail(email, function(error) {
     //   #/register - Register
     //   #/profile  - Profile
 
-    Path.map("#/").to(prepRoute);
-    Path.map("#/logout").to(prepRoute);
-    Path.map("#/register").to(prepRoute);
-    Path.map("#/profile").to(prepRoute);
+//    Path.map("#/").to(prepRoute);
+//    Path.map("#/logout").to(prepRoute);
+//    Path.map("#/register").to(prepRoute);
+//    Path.map("#/profile").to(prepRoute);
 
-    Path.root("#/");
+//    Path.root("#/");
 
     /// Initialize
     ////////////////////////////////////////
 
-    $(function() {
+//    $(function() {
 
         // Start the router
-        Path.listen();
+//        Path.listen();
 
         // whenever authentication happens send a popup
-        rootRef.onAuth(function globalOnAuth(authData) {
+//        rootRef.onAuth(function globalOnAuth(authData) {
 
-            if (authData) {
-                showAlert({
-                    title: 'Logged in!',
-                    detail: 'Using ' + authData.provider,
-                    className: 'alert-success'
-                });
-            } else {
-                showAlert({
-                    title: 'You are not logged in',
-                    detail: '',
-                    className: 'alert-info'
-                });
-            }
+//            if (authData) {
+ //               showAlert({
+//                    title: 'Logged in!',
+ //                   detail: 'Using ' + authData.provider,
+//                    className: 'alert-success'
+//                });
+//            } else {
+//                showAlert({
+//                    title: 'You are not logged in',
+//                    detail: '',
+//                    className: 'alert-info'
+//                });
+//            }
 
-        });
+//        });
 
-    });
+//    });
 
-(window.jQuery, window.Firebase, window.Path)
+//(window.jQuery, window.Firebase, window.Path)
 
 ///////////////////////////////////////////////////////////////////////////////////ending here 

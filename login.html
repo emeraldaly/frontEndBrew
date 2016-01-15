@@ -21,7 +21,6 @@
  <div class="container-fluid">
         <!-- this section "header" is for the nav bar-->
         <div class="row">
-            <!-- nav bar by Carolyn -->
             <!--static navbar-->
             <nav>
                 <div class="nav-wrapper">
@@ -46,7 +45,8 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-           </button> <a href="#" class="navbar-brand">Firebase login</a>
+              <a href="#" class="navbar-brand">Firebase login</a>
+            </button>  
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
@@ -170,26 +170,22 @@
                   </form>
                 </div>              
                   <form id="frmLogout" role="form"><h6>You are logged out!</h6></form>             
-             
-
           </li>  
           
-
           <li id="newUserRegister" class="dropdown">
             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Register<strong class="caret"></strong></a>
-            <p id="validationmessage"><p>
-                <!--div id="SuccessfulLogin">
+            <p id="validationmessage"></p>
+                <div id="SuccessfulLogin">
                     <button type="submit" class="btn btn-primary btn-md" id="startSearch">Start Search</button>
-                  </div-->            
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 6px;">
-              <form id="frmregister" method="post" accept-charset="UTF-8">
-                  <input id="user_username" class="form-control" style="margin-bottom: 15px;" type="text" name="identity" size="30" placeholder="email address">
-                  <input id="user_password" class="form-control" style="margin-bottom: 15px;" type="password" name="password" placeholder="password" size="30"> 
-                  <input id="register" class="btn btn-primary btn-md" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Submit">                        
-              </form>              
-            </div>          
-          </li>                     
-      </div>    
+                     </div>            
+                     <div class="dropdown-menu" style="padding: 15px; padding-bottom: 6px;">
+                       <form id="frmregister" method="post" accept-charset="UTF-8">
+                         <input id="user_username" class="form-control" style="margin-bottom: 15px;" type="text" name="identity" size="30" placeholder="email address">
+                         <input id="user_password" class="form-control" style="margin-bottom: 15px;" type="password" name="password" placeholder="password" size="30"> 
+                         <input id="register" class="btn btn-primary btn-md" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Submit"> 
+                       </form>              
+                     </div>
+          </li>
 <!--footer starts-->
   <footer>
     <div class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
@@ -205,7 +201,6 @@
 <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>   
 <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 <script type="text/javascript" src="js/firebasesimplelogin.js"></script>
-<script type="text/javascript" src="js/loginFirebase.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-<body>
-<html>
+</body>
+</html>
