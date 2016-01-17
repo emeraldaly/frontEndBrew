@@ -1,10 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Login with Firebase</title> 
-      <html lang="en">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
@@ -17,54 +14,34 @@
       <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </head>
 <body>    
- <div class="container-fluid">
-        <!-- this section "header" is for the nav bar-->
-        <div class="row">
-            <!--static navbar-->
-            <nav>
-                <div class="nav-wrapper">
-                    <div class="col s3">
-                        <img src="pictures/logo1img.png"><a href="#" class="brand-logo">BreWine Finder</a>
-                    </div>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="uberRide.html">Rides by Uber</a></li>
-                        <li><a href="login.html">Log in</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-<header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+  <header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="sr-only">Toggle navigation</span>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-              <a href="#" class="navbar-brand">Firebase login</a>
-            </button>  
+            </button> <a href="#/" class="navbar-brand">Firebase login</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
-                <li> <a href="#/">Login</a>
+               <li> <a href="#/">Login</a>
 
-                </li>
-                <li> <a href="#/logout">Logout</a>
+                  </li>
+                  <li> <a href="#/logout">Logout</a>
 
-                </li>
-                <li> <a href="#/register">Register</a>
+                  </li>
+                  <li> <a href="#/register">Register</a>
 
-                </li>
-                <li> <a href="#/profile">Profile</a>
+                  </li>
+                  <li> <a href="#/profile">Profile</a>
 
-                </li>
+                  </li>  
             </ul>
         </nav>
     </div>
-</header>
+  </header>
 <div id="container" class="container">
     <!-- LOGIN -->
     <form id="frmLogin" role="form">
@@ -82,24 +59,18 @@
         <br />
         <br />
          <h4>Login with</h4>
- <a href="#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
- <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
-
-        <!-- <a href="#" class="btn btn-danger bt-social" data-provider="google">Google+</a> --> <a href="#" class="btn btn-default bt-social" data-provider="github">GitHub</a>
- <a href="#" class="btn btn-warning" id="btAnon">Anon</a>
-
+           <a href="#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
+           <a href="#" class="btn btn-warning" id="btAnon">Anon</a>
     </form>
     <!-- / LOGIN -->
     <!-- LOGOUT -->
     <form id="frmLogout" role="form">
          <h2>You are logged out!</h2>
-
     </form>
     <!-- / LOGOUT -->
     <!-- REGISTER -->
     <form id="frmRegister" role="form">
          <h2>Register</h2>
-
         <div class="form-group">
             <label for="txtRegEmail">Email address</label>
             <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
@@ -114,7 +85,6 @@
     <!-- PROFILE -->
     <form id="frmProfile" role="form">
          <h2>Profile</h2>
-
         <br />
         <div class="form-group">
             <label for="txtName">Name</label>
@@ -141,60 +111,7 @@
         <p id="alert-detail"></p>
     </div>
     <!-- / ALERT BOX -->
-</div>   
-          <li class="container cleanlogin2Container" id="cleanlogin2Row" class="dropdown">                      
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login<strong class="caret"></strong></a>
-            <div class="row" id="cleanLogin2Row"></div>
-                <p id="validationmessage"><p>
-
-                <div class="dropdown dropdown-menu" style="padding: 15px; padding-bottom: 6px;">
-                  <form id="frmlogin" role="form" method="post" accept-charset="UTF-8">
-                    <div id="cleanlogin2">
-
-                      <input id="user_username" class="form-control" style="margin-bottom: 15px;" type="text" name="identity" size="30" placeholder="email address">
-
-                      <input id="user_password" class="form-control" style="margin-bottom: 15px;" type="password" name="password" placeholder="   password" size="30">
-                    
-                      <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="remember" value="1">
-                      <label class="string optional" for="user_remember_me">Remember Me</label>
-
-                      <input id="loginSubmit" class="btn btn-default btn-md" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Submit" onkeypress="(cleanLogin2(event)">
-
-                      <!--button type="submit" class="btn btn-primary btn-md" id="loginSubmit">Submit</button-->
-
-                      <h6>Login with:</h6>
-                      <a href="#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
-                      <h6><label class="string optional" for="user_remember_me"></label></h6>
-                    </div>                    
-                  </form>
-                </div>              
-                  <form id="frmLogout" role="form"><h6>You are logged out!</h6></form>             
-          </li>  
-          
-          <li id="newUserRegister" class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Register<strong class="caret"></strong></a>
-            <p id="validationmessage"></p>
-                <div id="SuccessfulLogin">
-                    <button type="submit" class="btn btn-primary btn-md" id="startSearch">Start Search</button>
-                     </div>            
-                     <div class="dropdown-menu" style="padding: 15px; padding-bottom: 6px;">
-                       <form id="frmregister" method="post" accept-charset="UTF-8">
-                         <input id="user_username" class="form-control" style="margin-bottom: 15px;" type="text" name="identity" size="30" placeholder="email address">
-                         <input id="user_password" class="form-control" style="margin-bottom: 15px;" type="password" name="password" placeholder="password" size="30"> 
-                         <input id="register" class="btn btn-primary btn-md" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Submit"> 
-                       </form>              
-                     </div>
-          </li>
-<!--footer starts-->
-  <footer>
-    <div class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
-      <div class="container-fluid">
-        <table class="navbar-form navbar-left" role="search">
-          <div class="table-group" style="text-align:center"></div>
-        </table> 
-      </div>
-    </div>
-  </footer> 
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/firebasesimplelogin.js"></script>
