@@ -1,0 +1,42 @@
+{
+  "name": "brewine-find",
+  "version": "1.0.0",
+  "description": "Web Application that uses beer and wine APIs to help people search for beers, wines, breweries, and vineyards",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emeraldaly/frontEndBrew.git"
+  },
+  "keywords": [
+    "beer",
+    "wine",
+    "brewery",
+    "vineyard"
+  ],
+  "author": "Carolyn T.; Alyson W.; Mark A.; Marco S.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emeraldaly/frontEndBrew/issues"
+  },
+  "homepage": "https://github.com/emeraldaly/frontEndBrew#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
+    "cookie-parser": "^1.4.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "mongojs": "^2.3.0",
+    "mongoose": "^4.4.13",
+    "mongoose-unique-validator": "^1.0.2",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.72.0",
+    "serve-favicon": "^2.3.0"
+  }
+}

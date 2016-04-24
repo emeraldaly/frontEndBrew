@@ -65,6 +65,10 @@ $(document).ready(function(){
   $(".search3").on("click", function(e){
 
     e.preventDefault();
+    console.log(e);
+    var searchEvent = e;
+    console.log(searchEvent);
+    console.log(searchEvent.toElement.className)
 
     //alert("search button 3 works"); //Testing Search Now Button 
 
@@ -80,6 +84,8 @@ $(document).ready(function(){
     console.log(brewDBAPI);
     
     endpointBreweryDBbreweriesByName (brewDBAPI);       //Run the AJAX call function
+  
+    location.href = "search.html";
   });
 
   //Search For Brewery by Zip Code
@@ -199,27 +205,30 @@ $(document).ready(function(){
       url: APIurl,
 
       success: function(brews){
-          //debugger
+          //ebugger
           //var brewResponse =JSON.parse(brews);
           //console.log(brews.data[4]);
-          //console.log(brews);
+          console.log(brews);
           //debugger
           window.brewSearch1 = brews;
-          //console.log(window.brewSearch1); // Saving the results objects
-          //console.log(brews.data[0].name);
-          //console.log(window.brewSearch1.data[0].name);
+          console.log(window.brewSearch1); // Saving the results objects
+          console.log(brews.data[0].name);
+          console.log(window.brewSearch1.data[0].name);
 
           for (var i = 0; i < brews.data.length; i++) {
-            
+          //debugger
             console.log(brews.data[i].name);
             window.beersByNames = brews.data[i].name;
             window.beersByNamesWithDescriptions = brews.data[i].description;
             console.log(window.beersByNames);
             console.log(window.beersByNamesWithDescriptions);
             
-
             if (brews.data[i].description === undefined) {
               window.beersByNamesWithDescriptions = brews.data[i].style.description;
+            }
+
+            if (window.beersByNamesWithDescriptions === undefined) {
+              window.beersByNamesWithDescriptions = "Description Not Available"
             }
 
             console.log(window.beersByNamesWithDescriptions);
@@ -229,10 +238,7 @@ $(document).ready(function(){
           //Create and Set Cookie
           //Cookies.set('beerNameSearches', 'window.brewSearch1', { expires: 7 });
 
-          //Store to Firebase
-          //myDataRef.set(window.beersByNames);  //Store names in Firebase
-          //myDataRef.set(window.beersByNamesWithDescriptions);  //Store names in Firebase
-
+         
           //debugger;
             myDataRef.push().set({
               
@@ -242,10 +248,15 @@ $(document).ready(function(){
             }); //Store Objects
             //myDataRef.push({name: "beersByNamesWithDescriptions_FB", });
 
+             //Store to Firebase
+          //myDataRef.set(window.beersByNames);  //Store names in Firebase
+          //myDataRef.set(window.beersByNamesWithDescriptions);  //Store names in Firebase
+
           }
       },
       
       error: function ( jqXHR, textStatus, errorThrown ) {
+        debugger
         console.log("something went wrong");
         console.log(jqXHR);
         console.log(textStatus);
@@ -277,19 +288,32 @@ $(document).ready(function(){
           console.log(brews.data[0].name);
 
           for (var i = 0; i < brews.data.length; i++){
-            //debugger
+            debugger
             console.log(brews.data[i].name);
             breweriesByName = brews.data[i].name;
             breweriesByNameWithDescriptions = brews.data[i].description;
+            window.breweriesByNameWithDescriptions = brews.data[i].description;
             console.log(breweriesByName);
             console.log(breweriesByNameWithDescriptions);
 
 
-            myDataRef.push().set({
-              brewery_name: brews.data[i].name, 
-              brewery_description: brews.data[i].description
-            }); //Store Objects
+            if (brews.data[i].description === undefined) {
+              window.breweriesByNameWithDescriptions = "Not Available";
+              //brews.data[i].style.description;
+            }
+             console.log(window.breweriesByNameWithDescriptions);
             
+            // if (window.breweriesByNameWithDescriptions === undefined) {
+            //   window.breweriesByNameWithDescriptions = "Not Available"
+            // }
+            //      console.log(window.breweriesByNameWithDescriptions);
+
+            myDataRef.push().set({      //store Objects
+              
+              brewery_name: window.breweriesByName,
+
+              brewery_description: window.breweriesByNameWithDescriptions
+            }); 
        
           }
       },
@@ -325,7 +349,7 @@ $(document).ready(function(){
        
 
           for (var i = 0; i < brews.data.length; i++){
-            //debugger
+            debugger
             console.log(brews.data[i].brewery.name); //Accessing the AJAX object
             console.log(brews.data[i].brewery.description); //Accessing the AJAX object
             breweriesByZipCode = brews.data[i].brewery.name;
