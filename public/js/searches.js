@@ -10,6 +10,8 @@ $(document).ready(function(){
 
   var myDataRef =  new Firebase ('https://brewine-find.firebaseio.com/');
 
+  localStorage.setItem('myCat', 'Tom');
+
   myDataRef.on('child_added', function(snapshot) {  //intro
     var brewsFB = snapshot.val(); //was coming up as undefined
                                       //return a data object from Firebase
@@ -42,7 +44,7 @@ $(document).ready(function(){
     
 
   function brewByNamesBuildRow (rowData) {
-    //debugger
+    debugger
     console.log(rowData); //checking for beer name array element passing
 
     var nameTD = $("<td>").append(rowData.beer_name); //append beer_name key from Firebase object
@@ -58,7 +60,24 @@ $(document).ready(function(){
           .append(nameTD) // Adding each cell with correct information from object
           .append(descriptionTD);
       
-    };
-   //end of function
+  }; //end of function
 
+  function breweryByNamesBuildRow (rowData) {
+    //debugger
+    console.log(rowData); //checking for beer name array element passing
+
+    var nameTD = $("<td>").append(rowData[1]); //append beer_name key from Firebase object
+    console.log(nameTD);
+    
+    var descriptionTD = $("<td>").append(rowData[0]); //append beer_description key from Firebase object
+    console.log(nameTD);
+    
+    var newRow = ("<tr>");
+    console.log(newRow);
+
+    return $("tbody").append(newRow)
+          .append(nameTD) // Adding each cell with correct information from object
+          .append(descriptionTD);
+      
+    };
 });
