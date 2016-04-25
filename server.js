@@ -7,8 +7,11 @@ var bodyParser    = require('body-parser');
 
 var PORT          = process.env.PORT || 8080;
 
-var passport      = require('./config/passport');
 var db            = require('./config/db.js');
+
+var passport      = require('./config/passport');
+
+var index         = require('./controller/index.js');
 var authentication  = require('./controller/authentication.js');
 
 var app           = express();    //Initializing Express
@@ -43,9 +46,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Routing
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+app.get('/', index)
 
 app.get('/login', authentication);
 

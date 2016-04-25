@@ -22,7 +22,7 @@ window.brewSearch2; //whole AJAX object
 window.brewSearch3; //whole AJAX object
 
 
-var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
+//var myDataRef = new Firebase('https://brewine-find.firebaseio.com/');
 
 
 $(document).ready(function(){
