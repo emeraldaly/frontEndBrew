@@ -1,8 +1,7 @@
 var mongoose =require('mongoose');
 
-
-var kittySchema = mongoose.Schema({
+var userSchema = mongoose.Schema({
     name: String
 });
 
-var Kitten = mongoose.model('Kitten', kittySchema);
+var User = mongoose.model('User', userSchema);

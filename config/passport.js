@@ -1,21 +1,24 @@
-var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+var passport      = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
-passport.use(new LocalStrategy(
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
+
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'passwd',
+    session: false
+  },
   function(username, password, done) {
     User.findOne({ username: username }, function (err, user) {
       if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
       return done(null, user);
     });
   }
+  
 ));
-
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -26,3 +29,7 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+
+
+module.exports = passport;
