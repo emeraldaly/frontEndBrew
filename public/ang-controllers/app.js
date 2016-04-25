@@ -26,32 +26,37 @@ brewineApp.config( function ($stateProvider, $urlRouterProvider, $locationProvid
       url: '/',
       templateUrl: 'partials/home.html'
       //controller??
+    })
+
+    .state('registration', {
+      url: '/register',
+      templateUrl: 'partials/register.html'
+    })
+
+    .state('register', {
+      url: '/registration',
+      templateUrl: 'partials/login.html'
+    })
+    
+    .state('login', {
+      url: '/login',
+      templateUrl: 'partials/login.html'
+    })
+
+    .state('uberRide', {
+      url: '/uberRide',
+      templateUrl: 'partials/uberRide.html'
+    })
+
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'partials/contact.html'
+    })
+
+    .state('about', {
+      url: '/about',
+      templateUrl: 'partials/about.html'
     });
-
-    // .state('registration', {
-    //   url: '/register',
-    //   templateUrl: '/views/register.html'
-    // })
-
-    // .state('login', {
-    //   url: '/login',
-    //   templateUrl: '/views/login.html'
-    // })
-
-    // .state('uberRide', {
-    //   url: '/uberRide',
-    //   templateUrl: '/views/uberRide.html'
-    // })
-
-    // .state('contact', {
-    //   url: '/contact',
-    //   templateUrl: '/views/contact.html'
-    // })
-
-    // .state('about', {
-    //   url: '/about',
-    //   templateUrl: '/views/about.html'
-    // });
 
 });
   

@@ -46,9 +46,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Routing
-app.get('/', index)
+app.get('/', index);
+app.get('/uberRide', index);
+app.get('/about', index);
+app.get('/contact', index);
+app.get('/search', index);
 
 app.get('/login', authentication);
+
+
 
 app.listen(8080, function(){
   console.log("Port listening on PORT: "+ PORT)
