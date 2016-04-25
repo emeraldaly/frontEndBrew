@@ -14,7 +14,7 @@ brewineApp.service('sharedProperties', function() {
 });
 
 
-brewineApp.config( ['$stateProvider', '$urlRouterProvider', '$locationProvider'], function ($stateProvider, $urlRouterProvider, $locationProvider) {
+brewineApp.config( function ($stateProvider, $urlRouterProvider, $locationProvider) {
    
    $urlRouterProvider.otherwise("/"); //provide for routes that don't exist
 
@@ -25,6 +25,7 @@ brewineApp.config( ['$stateProvider', '$urlRouterProvider', '$locationProvider']
     .state('home', {
       url: '/',
       templateUrl: 'partials/home.html'
+      //controller??
     });
 
     // .state('registration', {
