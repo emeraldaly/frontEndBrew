@@ -1,5 +1,5 @@
 
-<html ng-app>
+<html>
 <!-- <html ng-app="brewineApp"> -->
 
 <head>
@@ -39,14 +39,17 @@
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-  <!-- AngularCDN -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <!--Angular CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <base href="/"/>
 
 
 </head>
 
-<body>
+<body ng-app="BeerWineApp">
+
+<div ui-view></div> 
 
 <!-- Testing Angular -->
 {{2+2}}
@@ -122,6 +125,8 @@
    <!--  <script type="text/javascript" src="js-cookie-master/src/js.cookie.js"></script>
  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
 
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
