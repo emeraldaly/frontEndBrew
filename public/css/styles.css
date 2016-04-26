@@ -1,9 +1,37 @@
+/*
+h3 {
+ color: white;
+ font-size: 50px;
+ text-shadow: 2px 2px #120309;
+ text-shadow: 2px 2px #ccffcc;
+}*/
+
+h5 {
+  color: white;
+  font-size:40px;
+  text-shadow: 1px 1px #000066;
+  /*text-shadow: 1px 1px #000066;*/
+}
+h5 p {
+    color: black;
+    text-shadow: 0px;
+}
+
+button {
+    text-align: center;
+}
+
+
 nav {
    font-size: 16px ;
    font-family: verdana ;
    width: 100% ;
    height: 100px ;
-   background-color: #EDDE95;
+   /*background-color: #EDDE95;*/
+   background-color: #b71c1c;
+
+  padding-left: 25px;
+  padding-right: 25px;
 
 }
 
@@ -24,48 +52,148 @@ nav .brand-logo {
 }
     
 body {
-  background-color: #b71c1c;
-  background-image: url("../pictures/flowers.png");
+    /*background-image: url("../pictures/flowers.png");*/
 } /* #993300 */
 
+.slider {
+  margin-bottom: 15px;
+}
+
+.slider h3 {
+  color: white;
+
+ text-shadow: 2px 2px #120309;
+ /*text-shadow: 2px 2px #ccffcc;*/
+}
+
+#section1-header h3 {
+  text-align: center;
+  color: black;
+
+}
+
+#section1-header p {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+}
+
+#beer-and-wine-row{
+  padding: 25px;
+}
+
+#beer-section-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  margin-top: 
+}
+
+#beer-section-container:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url("http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+#beer-section-container h3 {
+    padding: 50px;
+    text-align: center;
+    text-shadow: 2px 2px #000066;
+    z-index: 200;
+    position: relative;
+    color: white;
+}
+
+#beer-section-container  .btn {
+    padding: 50px;
+    text-align: center;
+    z-index: 200;
+    position: relative;
+    color: white;
+} 
+
+#wine-section-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  
+}
+#wine-section-container:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url("http://s.hswstatic.com/gif/build-wine-rack-1.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+#wine-section-container h3 {
+    padding: 50px;
+    text-align: center;
+    text-shadow: 2px 2px #000066;
+    z-index: 200;
+    position: relative;
+    color: white;
+}
+
+#wine-section-container .btn {
+    padding: 50px;
+    text-align: center;
+    z-index: 200;
+    position: relative;
+    color: #A62626;
+} 
+
+/*#beersection{
+  background-image: url("http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg");
+}
+
+#winesection{
+  background-image: url("https://pbs.twimg.com/media/CUi6ZUSUYAAaPFL.jpg");
+}
+*/
 
 footer{
     font-size: 16px ;
     font-family: verdana ;
     width: 100% ;
     background-color: #EDDE95;
-    position: absolute; 
+    position: absolute;
+    padding-left: 100px;
 }
 
 
 form { 
     text-align: center;
 }
+/*
 
-
-div > h5 {
+footer h5 {
     text-align: center;
-}
-
-h3 {
- color: black;
- font-size: 50px;
- text-shadow: 2px 2px #ccffcc;
-}
-
-h5{
-  color: white;
-  font-size:40px;
-  text-shadow: 1px 1px #000066;
-}
-h5 p {
-    color: black;
-    text-shadow: 0px;
-}
-
-button {
-    text-align: center;
-}
+}*/
 
 a {
     text-align: center;
@@ -101,6 +229,10 @@ a {
     text-align: center;
 }
 
+.recommendations button{
+    padding-left: 50px;
+    text-align: center;
+}
 #beerNameSearch1 {
     text-align: center;
     background-position: center;
@@ -122,9 +254,6 @@ a {
       height: 250px;
 }
 
-#section1-header {
-    text-align: center;
-}
 
 
 

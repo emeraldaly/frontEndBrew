@@ -1,6 +1,6 @@
-var mainController = angular.module('mainController', ['ngAnimate', 'ngStorage']);
+var mainController = angular.module('mainController', ['ngAnimate']);
 
-mainController.controller("authenticationController", function($scope, $rootScope, $http, $location, $stateParams, sharedProperties, $localStorage) {
+mainController.controller("LoginController", function($scope, $rootScope, $http, $location, $stateParams, sharedProperties) {
 
   $rootScope.authenticated = false;
   $rootScope.current_user = " ";
@@ -12,20 +12,6 @@ mainController.controller("authenticationController", function($scope, $rootScop
   };
 
   $scope.error_message = '';
-
-  $scope.register = function() {
-    $http.post('/auth/register', $scope.user).success(function(data) {
-       console.log('login');
-      if (data.username) {
-        $rootScope.authenticated = true;
-        $rootScope.current_user = data.username;
-        console.log("successfully registered");
-        $location.path('/');
-      } else {
-        $scope.error_message = data.message;
-      };
-    });
-  };
 
   $scope.login = function() {
     console.log("logging in");
@@ -50,6 +36,39 @@ mainController.controller("authenticationController", function($scope, $rootScop
       } else {
         $scope.error_message = data.message;
       }
+    });
+  };
+
+
+});
+
+
+
+
+mainController.controller("RegisterController", function($scope, $rootScope, $http, $location, $stateParams, sharedProperties) {
+
+  $rootScope.authenticated = false;
+  $rootScope.current_user = " ";
+
+  $scope.user = {
+    user_id:  '',
+    username: '',
+    password: ''
+  };
+
+  $scope.error_message = '';
+
+  $scope.register = function() {
+    $http.post('/auth/register', $scope.user).success(function(data) {
+       console.log('login');
+      if (data.username) {
+        $rootScope.authenticated = true;
+        $rootScope.current_user = data.username;
+        console.log("successfully registered");
+        $location.path('/');
+      } else {
+        $scope.error_message = data.message;
+      };
     });
   };
 

@@ -46,7 +46,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Routing
-app.get("*", index);
 app.get('/', index);
 app.get('/uberRide', index);
 app.get('/about', index);

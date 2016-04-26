@@ -1,4 +1,4 @@
-var brewineApp = angular.module("brewineapp", ['ui.router']);
+var brewineApp = angular.module("brewineApp", ['ui.router', 'mainController', 'searchController']);
 
 brewineApp.service('sharedProperties', function() {
   var user = 'test string value';
@@ -24,25 +24,32 @@ brewineApp.config( function($stateProvider, $urlRouterProvider, $locationProvide
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'partials/home.html'
-      //controller??
+      templateUrl: 'partials/home.html',
+      //ntroller: 'ExampleController'
     })
 
     .state('register', {
-      url: '/registration',
+      url: '/register',
       templateUrl: 'partials/register.html',
-      //controller: "authenticationController"
+      controller: 'RegisterController'
     })
 
     .state('login', {
       url: '/login',
       templateUrl: 'partials/login.html',
-      //controller: "authenticationController"
+      controller: 'LoginController'
+    })
+
+    .state('search', {
+      url: '/search',
+      templateUrl: 'partials/search.html',
+      
     })
 
     .state('uberRide', {
       url: '/uberRide',
-      templateUrl: 'partials/uberRide.html'
+      templateUrl: 'partials/uberRide.html',
+
     })
 
     .state('contact', {

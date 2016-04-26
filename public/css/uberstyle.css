@@ -1,5 +1,5 @@
 body {
-  background: url('../pictures/microbrewery_web.jpg');  
+  /*');  */
   background-size: cover;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -31,12 +31,26 @@ section {
   /*
   background: rgba(244,244,244,0.8);
   */
+  background: url('../pictures/microbrewery_web.jpg');
   padding: 2%;
   text-align: center;
   width: 100%;
   border: 1px solid rgb(209,209,215);
 
 }
+
+#uberRide-description h3{
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px #120309;
+}
+
+#uberRide-description h4{
+  color: grey;
+
+}
+
+
 
 a {
   color: inherit;
@@ -86,40 +100,6 @@ a {
     margin-top: 2%;
     padding-top: 12px;
     padding-right: 14px;
-}    
-
-
-nav {
-   font-size: 16px ;
-   font-family: verdana ;
-   width: 100% ;
-   height: 100px ;
-   background-color: #EDDE95;
-
-}
-
-nav > div > div > img {
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-nav .brand-logo {
-    text-align: left;
-    padding-top: 15px;
-}
-
-
-#nav-mobile {
-    padding-top: 15px;
-}
-
-
-footer{
-    font-size: 16px ;
-    font-family: verdana ;
-    width: 100% ;
-    background-color: #EDDE95;  
 }
 
 
@@ -127,52 +107,11 @@ form {
     text-align: center;
 }
 
-
+/*
 div > h5 {
     text-align: center;
 }
 
 
-#parallax-img {
-    width: 100%;
-}
 
-.img-circle {
-  border-radius: 50%;
-  
-}
-
-#beerNameSearch1 {
-    text-align: center;
-    background-position: center;
-    position: center;
-}
-
-h3 {
- color: grey;
- font-size: 50px;
-}
-
-h4 {
-  color: grey;
-}
-
-h5{
-  color: white;
-  font-size:40px;
-}
-
-.row-search h5 {
-    color: black;
-}
-
-.row-search h6 {
-    color: black;
-    font-size: 28px;
-    text-align: center;
-}
-
-
-.parallax-container {
-      height: 250px;
-}
+*/
