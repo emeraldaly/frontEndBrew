@@ -1,3 +1,7 @@
 form {
     display: none;
 }
+
+.login-container {
+  background-color: #ffffff
+}

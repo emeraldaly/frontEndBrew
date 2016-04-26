@@ -52,7 +52,7 @@ app.get('/about', index);
 app.get('/contact', index);
 app.get('/search', index);
 
-app.get('/login', authentication);
+app.get('/auth', authentication);
 
 
 
