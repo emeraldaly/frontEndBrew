@@ -4,7 +4,8 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
-passport.use(new LocalStrategy({
+//Registration Strategy
+passport.use('registration', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'passwd',
     session: false
@@ -19,6 +20,34 @@ passport.use(new LocalStrategy({
   }
   
 ));
+
+
+//Login
+passport.use('login', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password',
+    passReqToCallback: true,
+  },
+  function(req, username, password, done) {
+    User.findOne({
+      'username': req.body.username
+    }, function(err, user) {
+      //passing password to callback
+      bcrypt.compare(req.body.password, user.password, function (err, res) {
+        if (err) {
+          return done(err);
+        }
+        if (!res) {
+
+          return done(null, false);
+        }
+        if (res) {
+          return done(null, user);
+        }
+      });
+    });
+  }));
+
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

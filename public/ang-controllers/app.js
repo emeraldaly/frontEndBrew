@@ -14,7 +14,7 @@ brewineApp.service('sharedProperties', function() {
 });
 
 
-brewineApp.config( function ($stateProvider, $urlRouterProvider, $locationProvider) {
+brewineApp.config( function($stateProvider, $urlRouterProvider, $locationProvider) {
    
    $urlRouterProvider.otherwise("/"); //provide for routes that don't exist
 
@@ -28,19 +28,16 @@ brewineApp.config( function ($stateProvider, $urlRouterProvider, $locationProvid
       //controller??
     })
 
-    .state('registration', {
-      url: '/register',
-      templateUrl: 'partials/register.html'
-    })
-
     .state('register', {
       url: '/registration',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'partials/register.html',
+      //controller: "authenticationController"
     })
-    
+
     .state('login', {
       url: '/login',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'partials/login.html',
+      //controller: "authenticationController"
     })
 
     .state('uberRide', {
