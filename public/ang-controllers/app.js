@@ -28,14 +28,9 @@ brewineApp.config( function ($stateProvider, $urlRouterProvider, $locationProvid
       //controller??
     })
 
-    .state('registration', {
-      url: '/register',
-      templateUrl: 'partials/register.html'
-    })
-
     .state('register', {
       url: '/registration',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'partials/register.html'
     })
     
     .state('login', {
