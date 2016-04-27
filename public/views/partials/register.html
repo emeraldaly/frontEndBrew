@@ -22,16 +22,24 @@
       
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input name="newPassword" ng-model="password.new" class="validate" id="password">
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+         <input match-password="newPassword" name="confirmPassword" ng-model="password.confirm"class="validate">
+          <label >Confirm Password</label>
         </div>
       </div>
+      <a class="waves-effect waves-light btn">Register</a>
+
     </form>
   </div>
+
+  
 </div>
+
+
+
+

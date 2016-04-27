@@ -1,4 +1,4 @@
-var mainController = angular.module('mainController', ['ngAnimate', 'ngPassword']);
+var mainController = angular.module('mainController', ['ngAnimate']);
 
 mainController.controller("LoginController", function($scope, $rootScope, $http, $location, $stateParams, sharedProperties) {
 
