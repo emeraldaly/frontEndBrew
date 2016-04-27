@@ -8,7 +8,7 @@ var bodyParser    = require('body-parser');
 var PORT          = process.env.PORT || 8080;
 
 var db            = require('./config/db.js');
-
+var user          = require('./model/users.js')
 var passport      = require('./config/passport');
 
 var index         = require('./controller/index.js');
