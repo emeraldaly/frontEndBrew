@@ -47,10 +47,10 @@ app.use(passport.session());
 
 //Routing
 app.get('/', index);
-app.get('/uberRide', index);
-app.get('/about', index);
-app.get('/contact', index);
-app.get('/search', index);
+// app.get('/uberRide', index);
+// app.get('/about', index);
+// app.get('/contact', index);
+// app.get('/search', index);
 
 app.get('/auth', authentication);
 

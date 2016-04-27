@@ -31,7 +31,7 @@ mainController.controller("LoginController", function($scope, $rootScope, $http,
         //Assign User Data to Service to share between controllers
         sharedProperties.setUser($rootScope.user);
 
-        console.log("successfully Logged In  - Avengers Assemble");
+        console.log("successfully Logged In");
         $location.path('/profile');
       } else {
         $scope.error_message = data.message;

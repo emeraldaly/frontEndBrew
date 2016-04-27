@@ -80,6 +80,8 @@ body {
 
 #beer-and-wine-row{
   padding: 25px;
+  margin-bottom: 0;
+  height: 400px;
 }
 
 #beer-section-container {
@@ -109,7 +111,9 @@ body {
     background-size: cover;
 }
 #beer-section-container h3 {
-    padding: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px #000066;
     z-index: 200;
@@ -118,11 +122,12 @@ body {
 }
 
 #beer-section-container  .btn {
-    padding: 50px;
+   
     text-align: center;
     z-index: 200;
     position: relative;
     color: white;
+    background-color: #FF9A3D;
 } 
 
 #wine-section-container {
@@ -131,6 +136,8 @@ body {
   height: 100%;
   
 }
+
+
 #wine-section-container:before {
     content: '';
     display: block;
@@ -151,7 +158,9 @@ body {
     background-size: cover;
 }
 #wine-section-container h3 {
-    padding: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px #000066;
     z-index: 200;
@@ -160,13 +169,27 @@ body {
 }
 
 #wine-section-container .btn {
-    padding: 50px;
+    
     text-align: center;
     z-index: 200;
     position: relative;
-    color: #A62626;
+    color: white;
+    background-color: #A62626
 } 
 
+
+.section-button .btn {
+  margin: 25px;
+  text-align: center;
+  
+  margin-left: 100px;
+    
+  margin-right: 100px;
+}
+
+.buttons-in-two-sections{
+      
+}
 /*#beersection{
   background-image: url("http://homebrewacademy.com/wp-content/uploads/beer-shelf.jpg");
 }

@@ -1,6 +1,6 @@
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var User          = require('../model/users.js');
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
