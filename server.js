@@ -56,6 +56,6 @@ app.get('/auth', authentication);
 
 
 
-app.listen(8080, function(){
+app.listen(PORT, function(){
   console.log("Port listening on PORT: "+ PORT)
 })
